@@ -19,3 +19,5 @@ entry('bande','holotape','01 — Le dernier matin','Journal de famille · Enregi
 entry('terminal','terminal','Registre de l’abri','Poste de sécurité · Terminal 04','Dernière maintenance : 12 octobre 2287.\nÉtat du sas : opérationnel.\nAccès aux archives : limité.',{links:['note'],tags:['Abri 17']})]};
 export function newId(){return crypto.randomUUID()}
 export function safeUrl(value:string){try{const u=new URL(value);return u.protocol==='https:'||u.protocol==='http:'?u.href:''}catch{return ''}}
+
+export function searchText(value:string){return value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('fr').trim()}

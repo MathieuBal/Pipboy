@@ -33,6 +33,39 @@ async function main(){
  await page.getByRole('dialog').getByRole('button',{name:'Masquer',exact:true}).click();
  await page.getByRole('button',{name:'Vue joueur',exact:true}).click();await page.getByRole('button',{name:'HOLOBANDES',exact:true}).click();
  assert.equal(await page.getByRole('heading',{name:'Transcription de la famille Keller 1-5',exact:true}).count(),0);
+
+ // Search accepts unaccented input; preview stays reachable after opening a low card.
+ await page.getByRole('button',{name:'Console MJ',exact:true}).click();
+ await page.getByRole('button',{name:'Bibliothèque audio',exact:true}).click();
+ await page.getByRole('textbox',{name:'Rechercher une holobande'}).fill('brule');
+ await page.getByRole('heading',{name:'Brûle cette satanée combinaison',exact:true}).waitFor();
+ await page.getByRole('button',{name:'Préécouter',exact:true}).click();
+ assert.ok(await page.getByRole('region',{name:'Préécoute MJ'}).evaluate(e=>{const r=e.getBoundingClientRect();return r.top>=0&&r.top<innerHeight}),'Preview must be in viewport');
+ // Unsaved content can be kept when dismissing, and tag editing deduplicates on save.
+ await page.getByRole('button',{name:'Nouvelle fiche',exact:true}).click();
+ await page.getByRole('textbox',{name:'Titre',exact:true}).fill('Fiche de contrôle');
+ page.once('dialog',d=>d.dismiss());
+ await page.getByRole('dialog').getByRole('button',{name:'Annuler',exact:true}).click();
+ assert.equal(await page.getByRole('textbox',{name:'Titre',exact:true}).inputValue(),'Fiche de contrôle');
+ await page.getByRole('textbox',{name:'Résumé',exact:true}).fill('Vérification de sauvegarde');
+ await page.getByRole('textbox',{name:'Tags (séparés par des virgules)',exact:true}).fill('test, test, , utile');
+ await page.getByRole('dialog').getByRole('button',{name:'Enregistrer',exact:true}).click();
+ const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('pipboy-demo-v1')).entries.find(e=>e.title==='Fiche de contrôle'));
+ assert.deepEqual(saved.tags,['test','utile']);
+ // A failed settings save must retain the modal and its draft.
+ await page.getByRole('button',{name:'Réglages',exact:true}).click();
+ await page.getByRole('textbox',{name:'Nom de la campagne',exact:true}).fill('Nom conservé après erreur');
+ await page.evaluate(()=>{window.originalSetItem=Storage.prototype.setItem;Storage.prototype.setItem=function(k,v){if(k==='pipboy-demo-v1')throw new DOMException('Quota dépassé','QuotaExceededError');return window.originalSetItem.call(this,k,v)}});
+ await page.getByRole('dialog').getByRole('button',{name:'Enregistrer',exact:true}).click();
+ assert.equal(await page.getByRole('textbox',{name:'Nom de la campagne',exact:true}).inputValue(),'Nom conservé après erreur');
+ await page.evaluate(()=>{Storage.prototype.setItem=window.originalSetItem});
+ await page.getByRole('dialog').getByRole('button',{name:'Fermer',exact:true}).click();
+ await page.getByRole('button',{name:'Vue joueur',exact:true}).click();
+ await page.getByRole('button',{name:'DATA',exact:true}).click();
+ await page.getByLabel('Type de donnée').selectOption('quest');
+ assert.equal(await page.locator('article').count(),1);
+ await page.getByLabel('Type de donnée').selectOption('document');
+ assert.equal(await page.getByRole('heading',{name:'Une voix dans les ruines',exact:true}).count(),0);
  await fs.mkdir('test-results',{recursive:true});
  for(const width of [1440,390,320]){
   await page.setViewportSize({width,height:950});await page.getByRole('button',{name:'MAP',exact:true}).click();
