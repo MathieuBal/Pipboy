@@ -56,6 +56,177 @@
       "language": "Wiki FR",
       "audio": "https://fallout-wiki.com/images/d/d9/FO3_Message_de_papa.ogg",
       "sourceUrl": "https://fallout-wiki.com/Fichier:FO3_Message_de_papa.ogg"
+    },
+    {
+      "id": "wiki-fr-Affectation_du_commonwealth",
+      "title": "Affectation du commonwealth",
+      "game": "Fallout 3",
+      "series": "Fallout 3",
+      "language": "Wiki FR",
+      "audio": "https://fallout-wiki.com/images/f/f7/Affectation_du_commonwealth.ogg",
+      "sourceUrl": "https://fallout-wiki.com/Fichier:Affectation_du_commonwealth.ogg"
+    },
+    {
+      "id": "wiki-fr-Demande_d_aide",
+      "title": "Demande d aide",
+      "game": "Fallout 3",
+      "series": "Fallout 3",
+      "language": "Wiki FR",
+      "audio": "https://fallout-wiki.com/images/a/a4/Demande_d_aide.ogg",
+      "sourceUrl": "https://fallout-wiki.com/Fichier:Demande_d_aide.ogg"
+    },
+    {
+      "id": "wiki-fr-FO3_Brûle_cette_satanée_combinaison",
+      "title": "Brûle cette satanée combinaison",
+      "game": "Fallout 3",
+      "series": "Fallout 3",
+      "language": "Wiki FR",
+      "audio": "https://fallout-wiki.com/images/5/54/FO3_Br%C3%BBle_cette_satan%C3%A9e_combinaison.ogg",
+      "sourceUrl": "https://fallout-wiki.com/Fichier:FO3_Br%C3%BBle_cette_satan%C3%A9e_combinaison.ogg"
+    },
+    {
+      "id": "wiki-fr-FO3_Journal_de_Carrie_Delaney,_entrée_1",
+      "title": "Journal de Carrie Delaney, entrée 1",
+      "game": "Fallout 3",
+      "series": "Carrie Delaney",
+      "language": "Wiki FR",
+      "audio": "https://fallout-wiki.com/images/d/d3/FO3_Journal_de_Carrie_Delaney%2C_entr%C3%A9e_1.ogg",
+      "sourceUrl": "https://fallout-wiki.com/Fichier:FO3_Journal_de_Carrie_Delaney%2C_entr%C3%A9e_1.ogg"
+    },
+    {
+      "id": "wiki-fr-FO3_Journal_de_Carrie_Delaney,_entrée_2",
+      "title": "Journal de Carrie Delaney, entrée 2",
+      "game": "Fallout 3",
+      "series": "Carrie Delaney",
+      "language": "Wiki FR",
+      "audio": "https://fallout-wiki.com/images/b/bc/FO3_Journal_de_Carrie_Delaney%2C_entr%C3%A9e_2.ogg",
+      "sourceUrl": "https://fallout-wiki.com/Fichier:FO3_Journal_de_Carrie_Delaney%2C_entr%C3%A9e_2.ogg"
+    },
+    {
+      "id": "wiki-fr-FO3_Mon_journal,_par_Jason_Grant_--_entrée_1",
+      "title": "Mon journal, par Jason Grant -- entrée 1",
+      "game": "Fallout 3",
+      "series": "Jason Grant",
+      "language": "Wiki FR",
+      "audio": "https://fallout-wiki.com/images/4/45/FO3_Mon_journal%2C_par_Jason_Grant_--_entr%C3%A9e_1.ogg",
+      "sourceUrl": "https://fallout-wiki.com/Fichier:FO3_Mon_journal%2C_par_Jason_Grant_--_entr%C3%A9e_1.ogg"
+    },
+    {
+      "id": "wiki-fr-FO3_Mon_journal,_par_Jason_Grant_--_entrée_2",
+      "title": "Mon journal, par Jason Grant -- entrée 2",
+      "game": "Fallout 3",
+      "series": "Jason Grant",
+      "language": "Wiki FR",
+      "audio": "https://fallout-wiki.com/images/4/44/FO3_Mon_journal%2C_par_Jason_Grant_--_entr%C3%A9e_2.ogg",
+      "sourceUrl": "https://fallout-wiki.com/Fichier:FO3_Mon_journal%2C_par_Jason_Grant_--_entr%C3%A9e_2.ogg"
+    },
+    {
+      "id": "wiki-fr-FO3_Rapport_de_terrain_de_l'Enclave",
+      "title": "Rapport de terrain de l'Enclave",
+      "game": "Fallout 3",
+      "series": "Fallout 3",
+      "language": "Wiki FR",
+      "audio": "https://fallout-wiki.com/images/c/c0/FO3_Rapport_de_terrain_de_l%27Enclave.ogg",
+      "sourceUrl": "https://fallout-wiki.com/Fichier:FO3_Rapport_de_terrain_de_l'Enclave.ogg"
+    },
+    {
+      "id": "wiki-fr-Fnv_cassettes_de_sécurité_du_qg_du_justice_bloc",
+      "title": "cassettes de sécurité du qg du justice bloc",
+      "game": "Fallout: New Vegas",
+      "series": "Fallout: New Vegas",
+      "language": "Wiki FR",
+      "audio": "https://fallout-wiki.com/images/8/87/Fnv_cassettes_de_s%C3%A9curit%C3%A9_du_qg_du_justice_bloc.ogg",
+      "sourceUrl": "https://fallout-wiki.com/Fichier:Fnv_cassettes_de_s%C3%A9curit%C3%A9_du_qg_du_justice_bloc.ogg"
+    },
+    {
+      "id": "wiki-fr-Fnv_confession_du_chef_hanlon",
+      "title": "confession du chef hanlon",
+      "game": "Fallout: New Vegas",
+      "series": "Fallout: New Vegas",
+      "language": "Wiki FR",
+      "audio": "https://fallout-wiki.com/images/6/64/Fnv_confession_du_chef_hanlon.ogg",
+      "sourceUrl": "https://fallout-wiki.com/Fichier:Fnv_confession_du_chef_hanlon.ogg"
+    },
+    {
+      "id": "wiki-fr-FNV_Enregistrement_système_Entrée_principale_de_l'Abri_11",
+      "title": "Enregistrement système Entrée principale de l'Abri 11",
+      "game": "Fallout: New Vegas",
+      "series": "Abri 11",
+      "language": "Wiki FR",
+      "audio": "https://fallout-wiki.com/images/d/dd/FNV_Enregistrement_syst%C3%A8me_Entr%C3%A9e_principale_de_l%27Abri_11.ogg",
+      "sourceUrl": "https://fallout-wiki.com/Fichier:FNV_Enregistrement_syst%C3%A8me_Entr%C3%A9e_principale_de_l'Abri_11.ogg"
+    },
+    {
+      "id": "wiki-fr-FNV_Enregistrement_système_Solution_Abri_11",
+      "title": "Enregistrement système Solution Abri 11",
+      "game": "Fallout: New Vegas",
+      "series": "Abri 11",
+      "language": "Wiki FR",
+      "audio": "https://fallout-wiki.com/images/1/10/FNV_Enregistrement_syst%C3%A8me_Solution_Abri_11.ogg",
+      "sourceUrl": "https://fallout-wiki.com/Fichier:FNV_Enregistrement_syst%C3%A8me_Solution_Abri_11.ogg"
+    },
+    {
+      "id": "wiki-fr-Fnv_journal_adjoint_beagle",
+      "title": "journal adjoint beagle",
+      "game": "Fallout: New Vegas",
+      "series": "Fallout: New Vegas",
+      "language": "Wiki FR",
+      "audio": "https://fallout-wiki.com/images/6/6c/Fnv_journal_adjoint_beagle.ogg",
+      "sourceUrl": "https://fallout-wiki.com/Fichier:Fnv_journal_adjoint_beagle.ogg"
+    },
+    {
+      "id": "wiki-fr-FNV_Journal_audio_Post-guerre",
+      "title": "Journal audio Post-guerre",
+      "game": "Fallout: New Vegas",
+      "series": "Fallout: New Vegas",
+      "language": "Wiki FR",
+      "audio": "https://fallout-wiki.com/images/9/95/FNV_Journal_audio_Post-guerre.ogg",
+      "sourceUrl": "https://fallout-wiki.com/Fichier:FNV_Journal_audio_Post-guerre.ogg"
+    },
+    {
+      "id": "wiki-fr-FNV_Message_d'Elijah_Soirée_de_gala",
+      "title": "Message d'Elijah Soirée de gala",
+      "game": "Fallout: New Vegas",
+      "series": "Fallout: New Vegas",
+      "language": "Wiki FR",
+      "audio": "https://fallout-wiki.com/images/a/aa/FNV_Message_d%27Elijah_Soir%C3%A9e_de_gala.ogg",
+      "sourceUrl": "https://fallout-wiki.com/Fichier:FNV_Message_d'Elijah_Soir%C3%A9e_de_gala.ogg"
+    },
+    {
+      "id": "wiki-fr-FNV_Poste_de_Rangers_Charlie_-_Journal_audio_1",
+      "title": "Poste de Rangers Charlie - Journal audio 1",
+      "game": "Fallout: New Vegas",
+      "series": "Rangers Charlie",
+      "language": "Wiki FR",
+      "audio": "https://fallout-wiki.com/images/4/41/FNV_Poste_de_Rangers_Charlie_-_Journal_audio_1.ogg",
+      "sourceUrl": "https://fallout-wiki.com/Fichier:FNV_Poste_de_Rangers_Charlie_-_Journal_audio_1.ogg"
+    },
+    {
+      "id": "wiki-fr-FNV_Poste_de_Rangers_Charlie_-_Journal_audio_2",
+      "title": "Poste de Rangers Charlie - Journal audio 2",
+      "game": "Fallout: New Vegas",
+      "series": "Rangers Charlie",
+      "language": "Wiki FR",
+      "audio": "https://fallout-wiki.com/images/0/04/FNV_Poste_de_Rangers_Charlie_-_Journal_audio_2.ogg",
+      "sourceUrl": "https://fallout-wiki.com/Fichier:FNV_Poste_de_Rangers_Charlie_-_Journal_audio_2.ogg"
+    },
+    {
+      "id": "wiki-fr-Fnv_reponse_automatisee",
+      "title": "reponse automatisee",
+      "game": "Fallout: New Vegas",
+      "series": "Fallout: New Vegas",
+      "language": "Wiki FR",
+      "audio": "https://fallout-wiki.com/images/8/88/Fnv_reponse_automatisee.ogg",
+      "sourceUrl": "https://fallout-wiki.com/Fichier:Fnv_reponse_automatisee.ogg"
+    },
+    {
+      "id": "wiki-fr-Holodisk_(Allen_Mark)",
+      "title": "Holodisk (Allen Mark)",
+      "game": "Fallout: New Vegas",
+      "series": "Fallout: New Vegas",
+      "language": "Wiki FR",
+      "audio": "https://fallout-wiki.com/images/3/34/Holodisk_%28Allen_Mark%29.ogg",
+      "sourceUrl": "https://fallout-wiki.com/Fichier:Holodisk_(Allen_Mark).ogg"
     }
   ]
 }
