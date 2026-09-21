@@ -1,0 +1,61 @@
+{
+  "updatedAt": "2026-09-21",
+  "source": "https://fallout-wiki.com",
+  "complete": false,
+  "items": [
+    {
+      "id": "wiki-fr-FO3_Transcription_de_la_famille_Keller_1-5",
+      "title": "Transcription de la famille Keller 1-5",
+      "game": "Fallout 3",
+      "series": "Famille Keller",
+      "language": "Wiki FR",
+      "audio": "https://fallout-wiki.com/images/0/07/FO3_Transcription_de_la_famille_Keller_1-5.ogg",
+      "sourceUrl": "https://fallout-wiki.com/Fichier:FO3_Transcription_de_la_famille_Keller_1-5.ogg"
+    },
+    {
+      "id": "wiki-fr-FO3_Transcription_de_la_famille_Keller_2-5",
+      "title": "Transcription de la famille Keller 2-5",
+      "game": "Fallout 3",
+      "series": "Famille Keller",
+      "language": "Wiki FR",
+      "audio": "https://fallout-wiki.com/images/b/bf/FO3_Transcription_de_la_famille_Keller_2-5.ogg",
+      "sourceUrl": "https://fallout-wiki.com/Fichier:FO3_Transcription_de_la_famille_Keller_2-5.ogg"
+    },
+    {
+      "id": "wiki-fr-FO3_Transcription_de_la_famille_Keller_3-5",
+      "title": "Transcription de la famille Keller 3-5",
+      "game": "Fallout 3",
+      "series": "Famille Keller",
+      "language": "Wiki FR",
+      "audio": "https://fallout-wiki.com/images/9/9d/FO3_Transcription_de_la_famille_Keller_3-5.ogg",
+      "sourceUrl": "https://fallout-wiki.com/Fichier:FO3_Transcription_de_la_famille_Keller_3-5.ogg"
+    },
+    {
+      "id": "wiki-fr-FO3_Transcription_de_la_famille_Keller_4-5",
+      "title": "Transcription de la famille Keller 4-5",
+      "game": "Fallout 3",
+      "series": "Famille Keller",
+      "language": "Wiki FR",
+      "audio": "https://fallout-wiki.com/images/e/e7/FO3_Transcription_de_la_famille_Keller_4-5.ogg",
+      "sourceUrl": "https://fallout-wiki.com/Fichier:FO3_Transcription_de_la_famille_Keller_4-5.ogg"
+    },
+    {
+      "id": "wiki-fr-FO3_Transcription_de_la_famille_Keller_5-5",
+      "title": "Transcription de la famille Keller 5-5",
+      "game": "Fallout 3",
+      "series": "Famille Keller",
+      "language": "Wiki FR",
+      "audio": "https://fallout-wiki.com/images/f/f6/FO3_Transcription_de_la_famille_Keller_5-5.ogg",
+      "sourceUrl": "https://fallout-wiki.com/Fichier:FO3_Transcription_de_la_famille_Keller_5-5.ogg"
+    },
+    {
+      "id": "wiki-fr-FO3_Message_de_papa",
+      "title": "Message de papa",
+      "game": "Fallout 3",
+      "series": "Messages",
+      "language": "Wiki FR",
+      "audio": "https://fallout-wiki.com/images/d/d9/FO3_Message_de_papa.ogg",
+      "sourceUrl": "https://fallout-wiki.com/Fichier:FO3_Message_de_papa.ogg"
+    }
+  ]
+}
