@@ -1,0 +1,35 @@
+name: Validate Pip-Boy
+on:
+  pull_request:
+  push:
+    branches: [codex/pipboy-mvp]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - name: Index wiki metadata
+        run: node scripts/sync-holotapes.mjs
+      - run: npm run build
+      - name: Install browser for UI validation
+        run: |
+          npm install --no-save --package-lock=false playwright
+          npx playwright install --with-deps chromium
+      - name: Test player and GM journeys
+        run: node scripts/ui-smoke.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pipboy-validation
+          path: |
+            test-results/
+            public/holotapes.json

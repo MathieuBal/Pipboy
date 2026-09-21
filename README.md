@@ -69,3 +69,11 @@ Checklist sur le projet Supabase réel : rejoindre depuis un second appareil, tr
 - La carte incluse est un schéma fictif interactif. Le MJ peut fournir une image de campagne ; les coordonnées restent normalisées de 0 à 1. Zoom par boutons et déplacement par défilement.
 - Un document déjà lu ou copié ne peut pas être « désappris » après masquage.
 - Tests Supabase en conditions réelles non exécutés : aucun projet Supabase n’était configuré au moment de la livraison.
+
+## Bibliothèque audio du wiki
+
+Console MJ → Bibliothèque audio : recherche par titre, filtre par jeu/collection, préécoute manuelle, lien vers le fichier brut et sa page wiki. Ajouter conserve une fiche secrète ; Envoyer la révèle au joueur. L’import est idempotent et conserve les modifications locales d’une fiche déjà présente. Les sélections peuvent être importées en lot.
+
+`public/holotapes.json` contient une sélection initiale des cinq Keller et du Message de papa. `node scripts/sync-holotapes.mjs` indexe les catégories audio Fallout 3/4/76/New Vegas et leurs extensions via l’API MediaWiki avant chaque déploiement. Aucun audio ni transcription n’est copié dans le dépôt. En cas d’indisponibilité du wiki, l’index partiel est conservé et signalé dans l’interface. Les fichiers OGG sont lus directement depuis le wiki ; leur disponibilité et leur compatibilité navigateur dépendent de l’hébergeur et de l’appareil. Une erreur propose les liens source/brut. Le marquage « Wiki FR » indique la provenance, pas une vérification de chaque voix.
+
+Le workflow Validate Pip-Boy compile, teste le SQL et vérifie en navigateur l’import, la transmission, la persistance, le retrait et l’absence de débordement aux largeurs 320/390/1440 px. Les captures et l’index généré sont joints à l’exécution GitHub Actions. Le terminal local de développement peut être indisponible ; les résultats de CI font foi.

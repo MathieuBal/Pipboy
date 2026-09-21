@@ -1,5 +1,5 @@
 export type Kind = 'location'|'person'|'creature'|'item'|'document'|'quest'|'holotape'|'terminal';
-export type Entry = {id:string;type:Kind;title:string;summary:string;body:string;tags:string[];visible:boolean;status:string;x?:number;y?:number;audio?:string;image?:string;source?:string;links?:string[]};
+export type Entry = {id:string;type:Kind;title:string;summary:string;body:string;tags:string[];visible:boolean;status:string;x?:number;y?:number;audio?:string;image?:string;source?:string;sourceUrl?:string;links?:string[]};
 export type State = {name:string;entries:Entry[];position:{x:number;y:number};mapImage:string;log:{id:string;text:string;date:string}[]};
 export const labels:Record<Kind,string>={location:'Lieux',person:'Personnes',creature:'Faune',item:'Objets',document:'Documents',quest:'Quêtes',holotape:'Holobandes',terminal:'Terminaux'};
 const entry=(id:string,type:Kind,title:string,summary:string,body:string,extra:Partial<Entry>={}):Entry=>({id,type,title,summary,body,tags:[],visible:true,status:'Découvert',...extra});
