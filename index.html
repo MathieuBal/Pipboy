@@ -1,1 +1,20 @@
-<!doctype html><html lang="fr"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="theme-color" content="#061008"/><meta name="description" content="Votre mémoire des Terres désolées. Un compagnon de jeu de rôle et une console de maître du jeu."/><link rel="icon" href="./favicon.svg"/><title>Pip-Boy · Terminal de campagne</title></head><body><div id="root"></div><script type="module" src="/src/main.tsx"></script></body></html>
+<!doctype html>
+<html lang="fr"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="theme-color" content="#061008"/><meta name="description" content="Votre mémoire des Terres désolées. Un compagnon de jeu de rôle et une console de maître du jeu."/><link rel="icon" href="./favicon.svg"/><title>Pip-Boy · Terminal de campagne</title>
+<style>body{margin:0;background:#060d09;color:#a4ef91}#startup{max-width:540px;margin:12vh auto;padding:24px;font:16px/1.6 system-ui,sans-serif}#startup[hidden]{display:none}#startup h1{font-size:26px}#startup button,#startup a{display:inline-block;margin:8px 8px 0 0;padding:12px;border:1px solid #779978;background:#102016;color:#a4ef91;border-radius:4px;font:inherit;cursor:pointer}#startup-detail{overflow-wrap:anywhere;font-size:13px}</style>
+</head><body>
+<section id="startup" role="status" aria-live="polite"><h1>Pip-Boy · Connexion au terminal</h1><p id="startup-message">Chargement de l’application…</p><div id="startup-actions" hidden><button id="startup-reload">Réessayer le chargement</button><button id="startup-backup">Sauvegarder mes données locales</button><p>Vos données sont conservées. Si vous êtes dans une autre application, ouvrez ce lien dans Safari ou votre navigateur habituel.</p><details><summary>Détail du problème</summary><p id="startup-detail"></p></details></div><noscript>Activez JavaScript dans votre navigateur pour utiliser le Pip-Boy.</noscript></section>
+<div id="root"></div>
+<script>
+(function(){
+ var panel=document.getElementById('startup'),message=document.getElementById('startup-message'),actions=document.getElementById('startup-actions'),detail=document.getElementById('startup-detail'),ready=false;
+ function failed(text){panel.hidden=false;message.textContent='Le terminal n’a pas pu démarrer. Réessayez sans effacer vos données.';actions.hidden=false;detail.textContent=String(text||'Chargement interrompu.');}
+ var timer=setTimeout(function(){if(!ready)failed('Le chargement prend plus de temps que prévu. Vérifiez votre connexion puis réessayez.');},12000);
+ window.addEventListener('pipboy:ready',function(){ready=true;clearTimeout(timer);panel.hidden=true;});
+ window.addEventListener('pipboy:failed',function(e){clearTimeout(timer);failed(e.detail);});
+ window.addEventListener('error',function(e){if(!ready){clearTimeout(timer);failed(e.message||'Un fichier de l’application n’a pas pu être chargé.');}},true);
+ window.addEventListener('unhandledrejection',function(e){if(!ready){clearTimeout(timer);failed(e.reason&&e.reason.message||'Le démarrage a été interrompu.');}});
+ document.getElementById('startup-reload').onclick=function(){var u=new URL(location.href);u.searchParams.set('reload',String(Date.now()));location.replace(u.href);};
+ document.getElementById('startup-backup').onclick=function(){try{var data={campaign:localStorage.getItem('pipboy-demo-v1'),notes:localStorage.getItem('pipboy-notes')};var url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));var a=document.createElement('a');a.href=url;a.download='pipboy-sauvegarde-locale.json';a.click();setTimeout(function(){URL.revokeObjectURL(url);},1000);}catch(e){detail.textContent='Le navigateur bloque l’accès aux données locales : '+e.message;}};
+})();
+</script>
+<script type="module" src="/src/main.tsx"></script></body></html>
