@@ -45,6 +45,9 @@ async function main(){
  await page.getByRole('button',{name:'Nouvelle fiche',exact:true}).click();
  await page.getByRole('textbox',{name:'Titre',exact:true}).fill('Fiche de contrôle');
  page.once('dialog',d=>d.dismiss());
+ await page.keyboard.press('Escape');
+ assert.equal(await page.getByRole('dialog').count(),1,'Escape must respect cancelled discard');
+ page.once('dialog',d=>d.dismiss());
  await page.getByRole('dialog').getByRole('button',{name:'Annuler',exact:true}).click();
  assert.equal(await page.getByRole('textbox',{name:'Titre',exact:true}).inputValue(),'Fiche de contrôle');
  await page.getByRole('textbox',{name:'Résumé',exact:true}).fill('Vérification de sauvegarde');
@@ -66,6 +69,33 @@ async function main(){
  assert.equal(await page.locator('article').count(),1);
  await page.getByLabel('Type de donnée').selectOption('document');
  assert.equal(await page.getByRole('heading',{name:'Une voix dans les ruines',exact:true}).count(),0);
+
+ // Notes remain editable when storage is full, and can be retried without losing text.
+ await page.evaluate(()=>{window.originalSetItem=Storage.prototype.setItem;Storage.prototype.setItem=function(k,v){if(k==='pipboy-notes')throw new DOMException('Quota','QuotaExceededError');return window.originalSetItem.call(this,k,v)}});
+ await page.getByRole('textbox',{name:'Notes personnelles',exact:true}).fill('Suivre la piste du relais');
+ await page.getByText('Notes non enregistrées.',{exact:false}).waitFor();
+ assert.equal(await page.getByRole('textbox',{name:'Notes personnelles',exact:true}).inputValue(),'Suivre la piste du relais');
+ await page.evaluate(()=>{Storage.prototype.setItem=window.originalSetItem});
+ await page.getByRole('button',{name:'Réessayer la sauvegarde',exact:true}).click();
+ assert.equal(await page.evaluate(()=>localStorage.getItem('pipboy-notes')),'Suivre la piste du relais');
+ // Map click does not move the player. Keyboard and drag do, with live drag feedback.
+ await page.getByRole('button',{name:'Console MJ',exact:true}).click();
+ const marker=page.getByRole('button',{name:'Position du joueur, déplaçable par le MJ',exact:true});
+ const position=()=>page.evaluate(()=>JSON.parse(localStorage.getItem('pipboy-demo-v1')).position);
+ const before=await position();await marker.click();assert.deepEqual(await position(),before);
+ await marker.focus();await page.keyboard.press('ArrowRight');
+ await page.waitForFunction(x=>JSON.parse(localStorage.getItem('pipboy-demo-v1')).position.x>x,before.x);
+ const bounds=await marker.boundingBox();
+ await page.mouse.move(bounds.x+bounds.width/2,bounds.y+bounds.height/2);await page.mouse.down();
+ await page.mouse.move(bounds.x+bounds.width/2+70,bounds.y+bounds.height/2+30,{steps:8});
+ const moving=await marker.boundingBox();assert.ok(moving.x>bounds.x+40,'Marker must follow pointer before release');
+ await page.mouse.up();await page.waitForFunction(x=>JSON.parse(localStorage.getItem('pipboy-demo-v1')).position.x>x+.02,before.x);
+ await page.getByRole('button',{name:'Vue joueur',exact:true}).click();
+ // Blocked storage at startup no longer causes a blank terminal.
+ const restricted=await browser.newContext();await restricted.addInitScript(()=>{Storage.prototype.getItem=function(){throw new DOMException('Blocked','SecurityError')}});
+ const restrictedPage=await restricted.newPage();const restrictedErrors=[];restrictedPage.on('pageerror',e=>restrictedErrors.push(e.message));
+ await restrictedPage.goto('http://127.0.0.1:4173');await restrictedPage.getByRole('heading',{name:'Les Terres désolées',exact:false}).waitFor();
+ assert.deepEqual(restrictedErrors,[]);await restricted.close();
  await fs.mkdir('test-results',{recursive:true});
  for(const width of [1440,390,320]){
   await page.setViewportSize({width,height:950});await page.getByRole('button',{name:'MAP',exact:true}).click();

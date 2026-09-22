@@ -7,3 +7,5 @@ export function readDemo():State{try{return JSON.parse(localStorage.getItem(STOR
 export function writeDemo(s:State){localStorage.setItem(STORAGE,JSON.stringify(s));window.dispatchEvent(new Event('pipboy-update'))}
 export type Snapshot={state:State;role:'gm'|'player';revision:number;name:string;invite_code?:string;members:number};
 export async function rpc<T>(name:string,args:Record<string,unknown>={}):Promise<T>{if(!supabase)throw Error('Supabase n’est pas configuré.');const {data,error}=await supabase.rpc(name,args);if(error)throw Error(error.message);return data as T}
+
+export function readPreference(key:string){try{return localStorage.getItem(key)}catch{return null}}
