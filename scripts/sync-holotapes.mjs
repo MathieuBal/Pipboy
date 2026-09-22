@@ -1,3 +1,4 @@
+import {tapesFromHtml} from './holotape-metadata.mjs';
 import {readFile,writeFile} from 'node:fs/promises';
 const output=new URL('../public/holotapes.json',import.meta.url);
 const seeds=JSON.parse(await readFile(output,'utf8'));
@@ -40,12 +41,23 @@ try{
    const raw=page.title.replace(/^[^:]+:/,'').replaceAll(' ','_');
    const title=raw.replace(/^(FO3|FO4|FO76|FNV|FONV)_/i,'').replace(/\.ogg$/i,'').replaceAll('_',' ');
    const series=/Keller/i.test(title)?'Famille Keller':/Carrie Delaney/i.test(title)?'Carrie Delaney':/Jason Grant/i.test(title)?'Jason Grant':/superviseur/i.test(title)?'Superviseur':meta.game;
-   found.set(info.url,{id:'wiki-fr-'+raw.replace(/\.ogg$/i,''),title,game:meta.game,series,language:'Wiki FR',audio:info.url,sourceUrl:info.descriptionurl||'https://fallout-wiki.com/'+encodeURIComponent(page.title)});
+   found.set(info.url,{...found.get(info.url),id:'wiki-fr-'+raw.replace(/\.ogg$/i,''),title,game:meta.game,series:found.get(info.url)?.series||series,language:'Wiki FR',audio:info.url,sourceUrl:info.descriptionurl||'https://fallout-wiki.com/'+encodeURIComponent(page.title)});
   }
  }
  if(titles.length===0)throw Error('Aucun fichier renvoyé');
  console.log('Wiki: '+files.size+' fichiers référencés, '+found.size+' liens audio disponibles.');
-}catch(error){complete=false;console.warn('Index partiel conservé : '+error.message)}
+}catch(error){
+ complete=false;console.warn('API wiki indisponible : '+error.message);
+ try{
+  const url='https://fallout-wiki.com/'+encodeURIComponent(roots[1][0].replaceAll(' ','_'));
+  const response=await fetch(url,{signal:AbortSignal.timeout(25000)});
+  if(!response.ok)throw Error('Wiki HTTP '+response.status);
+  const items=tapesFromHtml(await response.text(),'Fallout 4');
+  if(!items.length)throw Error('Aucun audio trouvé dans la catégorie');
+  for(const item of items)found.set(item.audio,{...item,...found.get(item.audio)});
+  console.log('Catégorie publique Fallout 4 : '+items.length+' pistes indexées.');
+ }catch(fallback){console.warn('Sélection vérifiée conservée : '+fallback.message)}
+}
 const items=[...found.values()].sort((a,b)=>a.game.localeCompare(b.game)||a.title.localeCompare(b.title,'fr',{numeric:true}));
 await writeFile(output,JSON.stringify({updatedAt:new Date().toISOString(),source:'https://fallout-wiki.com',complete,items},null,2)+'\n');
 console.log('Bibliothèque publiée : '+items.length+' holobandes. Complète : '+complete);

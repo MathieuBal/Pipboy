@@ -43,6 +43,24 @@ async function main(){
  await page.getByRole('heading',{name:'Brûle cette satanée combinaison',exact:true}).waitFor();
  await page.getByRole('button',{name:'Préécouter',exact:true}).click();
  assert.ok(await page.getByRole('region',{name:'Préécoute MJ'}).evaluate(e=>{const r=e.getBoundingClientRect();return r.top>=0&&r.top<innerHeight}),'Preview must be in viewport');
+ // Fallout 4 collections preserve sequence and never start audio automatically.
+ await page.getByRole('button',{name:'Eddie Winter',exact:true}).click();
+ assert.equal(await page.locator('article').count(),10);
+ await page.locator('article').first().getByRole('button',{name:'Préécouter',exact:true}).click();
+ await page.getByRole('region',{name:'Préécoute MJ'}).getByRole('heading',{name:"Holobande d'Eddie Winter 00",exact:false}).waitFor();
+ assert.equal(await page.locator('audio').evaluate(a=>a.paused&&!a.autoplay),true);
+ await page.locator('audio').dispatchEvent('error');
+ await page.getByRole('region',{name:'Préécoute MJ'}).getByRole('alert').waitFor();
+ await page.getByRole('button',{name:'Bande suivante',exact:true}).click();
+ await page.getByRole('region',{name:'Préécoute MJ'}).getByRole('heading',{name:"Holobande d'Eddie Winter 01",exact:false}).waitFor();
+ assert.equal(await page.getByRole('region',{name:'Préécoute MJ'}).getByRole('alert').count(),0);
+ await page.getByRole('button',{name:'Transmettre cette bande',exact:true}).click();
+ await page.waitForFunction(()=>JSON.parse(localStorage.getItem('pipboy-demo-v1')).entries.some(e=>e.title==="Holobande d'Eddie Winter 01"&&e.visible));
+ await page.getByRole('button',{name:'Tout Fallout 4',exact:true}).click();
+ await page.getByRole('checkbox',{name:'Au moins 1 minute',exact:true}).check();
+ await page.getByLabel('Trier les holobandes').selectOption('duration');
+ const expected=await page.evaluate(async()=>{const d=await(await fetch('/holotapes.json')).json();return d.items.filter(t=>t.game==='Fallout 4'&&t.duration>=60).sort((a,b)=>b.duration-a.duration)[0].title});
+ assert.equal(await page.locator('article').first().getByRole('heading').innerText(),expected);
  // Unsaved content can be kept when dismissing, and tag editing deduplicates on save.
  await page.getByRole('button',{name:'Nouvelle fiche',exact:true}).click();
  await page.getByRole('textbox',{name:'Titre',exact:true}).fill('Fiche de contrôle');

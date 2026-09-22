@@ -31,3 +31,5 @@
 }
 
 .map-bg.commonwealth-map{opacity:1;pointer-events:none}.map-credit{padding:10px 14px;font-size:11px;line-height:1.7;color:var(--muted)}.map-credit span{display:block}
+
+.collection-shortcuts,.preview-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:16px 0}.collection-shortcuts button{font-size:13px}.holo-library .filters{flex-wrap:wrap}.holo-library .filters select{max-width:100%}.audio-preview p{font-size:13px}
