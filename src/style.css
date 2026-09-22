@@ -29,3 +29,5 @@
  .gmnav button{font-size:.875rem}.section-title{flex-wrap:wrap}.counter{max-width:none!important;text-align:left!important}
  .form-grid{grid-template-columns:minmax(0,1fr)}.actions{flex-wrap:wrap}.actions button{flex:1}
 }
+
+.map-bg.commonwealth-map{opacity:1;pointer-events:none}.map-credit{padding:10px 14px;font-size:11px;line-height:1.7;color:var(--muted)}.map-credit span{display:block}
