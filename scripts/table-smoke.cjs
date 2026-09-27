@@ -32,7 +32,7 @@ async function main(){
    }
    await gm.getByRole('button',{name:'Révéler le pion',exact:true}).click();
    await gm.getByRole('button',{name:'Masquer le pion',exact:true}).waitFor();
-   const player=await context.newPage();player.on('pageerror',e=>errors.push(e.message));await player.goto('http://127.0.0.1:4173/');
+   const player=await context.newPage();player.on('pageerror',e=>errors.push(e.message));await player.goto('http://127.0.0.1:4173/');await player.getByRole('heading',{name:'Le Commonwealth',exact:false}).waitFor();
    assert.equal(await player.locator('.table-token').count(),0,'No prepared scene token on player map');
    await gm.getByRole('button',{name:'Afficher cette scène',exact:true}).click();
    await player.getByRole('heading',{name:'Deer Park · Station-service',exact:false}).waitFor();
