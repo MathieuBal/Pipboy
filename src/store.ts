@@ -3,7 +3,14 @@ import {initial,labels,type State} from './data';
 import {publicSupabaseConfig} from './supabase-public';
 const envUrl=import.meta.env.VITE_SUPABASE_URL,envKey=import.meta.env.VITE_SUPABASE_ANON_KEY;
 const {url,key}=envUrl&&envKey?{url:envUrl,key:envKey}:publicSupabaseConfig;
-export const supabase=url&&key?createClient(url,key):null;
+// Keep authentication usable for this visit when browser storage is blocked.
+const authMemory=new Map<string,string>();
+const authStorage={
+ getItem:(name:string)=>{try{return localStorage.getItem(name)??authMemory.get(name)??null}catch{return authMemory.get(name)??null}},
+ setItem:(name:string,value:string)=>{authMemory.set(name,value);try{localStorage.setItem(name,value)}catch{/* Session lasts for this visit. */}},
+ removeItem:(name:string)=>{authMemory.delete(name);try{localStorage.removeItem(name)}catch{/* Storage is unavailable. */}}
+};
+export const supabase=url&&key?createClient(url,key,{auth:{storage:authStorage}}):null;
 const STORAGE='pipboy-demo-v1';
 const cloneInitial=():State=>JSON.parse(JSON.stringify(initial));
 export function readDemo():State{
