@@ -11,13 +11,13 @@ test('owner/player isolation, persistent unlock/revoke, optimistic concurrency',
  await db.query('insert into auth.users values ($1),($2),($3)',[owner,player,stranger]);
  const as=async id=>{await db.exec('reset role');await db.query("select set_config('test.uid',$1,false)",[id]);await db.exec('set role authenticated')};
  await as(owner);
- const state={name:'Test',position:{x:.2,y:.3},mapImage:'',log:[{text:'Secret log'}],entries:[{id:'public',visible:true,title:'Découverte'},{id:'secret',visible:false,title:'SECRET'}]};
+ const state={name:'Test',position:{x:.2,y:.3},mapImage:'https://example.org/maps/smoky/station.webp',mapPositions:{privateMap:{x:.5,y:.5}},log:[{text:'Secret log'}],entries:[{id:'public',visible:true,title:'Découverte'},{id:'secret',visible:false,title:'SECRET'}]};
  const {rows:[{id}]}=await db.query('select public.create_session($1,$2) as id',['Test',state]);
  const get=async()=> (await db.query('select public.get_session($1) as data',[id])).rows[0].data;
  const gm=await get();assert.equal(gm.role,'gm');assert.equal(gm.state.entries.length,2);
  await as(stranger);await assert.rejects(get,/Accès refusé/);
  await as(player);await db.query('select public.join_session($1)',[gm.invite_code]);
- const p=await get();assert.equal(p.role,'player');assert.deepEqual(p.state.entries.map(e=>e.id),['public']);assert.deepEqual(p.state.log,[]);assert.equal(p.invite_code,undefined);
+ const p=await get();assert.equal(p.role,'player');assert.deepEqual(p.state.entries.map(e=>e.id),['public']);assert.deepEqual(p.state.log,[]);assert.equal(p.invite_code,undefined);assert.equal(p.state.mapImage,state.mapImage);assert.equal(p.state.mapPositions,undefined);
  await assert.rejects(db.query('select * from public.campaign_sessions'),/permission denied/);
  await assert.rejects(db.query('select public.save_session($1,$2,$3)',[id,state,1]),/réservée/);
  await as(owner);state.entries[1].visible=true;await db.query('select public.save_session($1,$2,$3)',[id,state,1]);

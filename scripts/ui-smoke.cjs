@@ -116,6 +116,41 @@ async function main(){
  const restrictedPage=await restricted.newPage();const restrictedErrors=[];restrictedPage.on('pageerror',e=>restrictedErrors.push(e.message));
  await restrictedPage.goto('http://127.0.0.1:4173');await restrictedPage.getByRole('heading',{name:'Le Commonwealth',exact:false}).waitFor();
  assert.deepEqual(restrictedErrors,[]);await restricted.close();
+ // Maps stay private in preview, persist when displayed, and remember marker positions.
+ await page.getByRole('button',{name:'Console MJ',exact:true}).click();
+ const priorMapState=await page.evaluate(()=>JSON.parse(localStorage.getItem('pipboy-demo-v1')));
+ await page.getByRole('button',{name:'Bibliothèque de cartes',exact:true}).click();
+ assert.equal(await page.locator('.map-cards article').count(),5);
+ for(const img of await page.locator('.map-cards img').all()){await img.scrollIntoViewIfNeeded();await img.evaluate(e=>e.decode())}
+ const vaultCard=page.locator('.map-cards article').filter({hasText:'Abri 50 · Secteur de départ'});
+ await vaultCard.getByRole('button',{name:'Prévisualiser',exact:true}).click();
+ assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('pipboy-demo-v1')).mapImage),priorMapState.mapImage);
+ await page.getByRole('region',{name:'Prévisualisation de carte'}).getByRole('button',{name:'Afficher sur le Pip-Boy',exact:true}).click();
+ await page.getByRole('heading',{name:'Abri 50 · Secteur de départ',exact:false}).waitFor();
+ assert.equal(await page.getByRole('button',{name:'Lieu : Abri 17',exact:true}).count(),0);
+ const vaultMarker=page.getByRole('button',{name:'Position du joueur, déplaçable par le MJ',exact:true});
+ await vaultMarker.focus();await page.keyboard.press('ArrowRight');
+ await page.waitForFunction(()=>JSON.parse(localStorage.getItem('pipboy-demo-v1')).position.x>.46);
+ const vaultPosition=await position();
+ await page.getByRole('button',{name:'Bibliothèque de cartes',exact:true}).click();
+ await page.locator('.map-cards article').filter({hasText:'Deer Park · Station-service'}).getByRole('button',{name:'Afficher sur le Pip-Boy',exact:true}).click();
+ await page.getByRole('heading',{name:'Deer Park · Station-service',exact:false}).waitFor();
+ await page.getByRole('button',{name:'Bibliothèque de cartes',exact:true}).click();
+ await page.locator('.map-cards article').filter({hasText:'Abri 50 · Secteur de départ'}).getByRole('button',{name:'Afficher sur le Pip-Boy',exact:true}).click();
+ await page.getByRole('heading',{name:'Abri 50 · Secteur de départ',exact:false}).waitFor();
+ assert.deepEqual(await position(),vaultPosition);
+ await page.getByRole('button',{name:'Vue joueur',exact:true}).click();await page.reload();
+ await page.getByRole('heading',{name:'Abri 50 · Secteur de départ',exact:false}).waitFor();
+ assert.equal(await page.getByRole('button',{name:'Bibliothèque de cartes',exact:true}).count(),0);
+ await page.setViewportSize({width:320,height:950});
+ assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'Scenario map must fit mobile');
+ await page.getByRole('button',{name:'Console MJ',exact:true}).click();
+ await page.getByRole('button',{name:'Bibliothèque de cartes',exact:true}).click();
+ assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'Map library must fit mobile');
+ await page.getByRole('button',{name:'Revenir au Commonwealth',exact:true}).click();
+ await page.getByRole('heading',{name:'Le Commonwealth',exact:false}).waitFor();
+ assert.deepEqual(await position(),priorMapState.position);
+ await page.getByRole('button',{name:'Vue joueur',exact:true}).click();
  await fs.mkdir('test-results',{recursive:true});
  for(const width of [1440,390,320]){
   await page.setViewportSize({width,height:950});await page.getByRole('button',{name:'MAP',exact:true}).click();

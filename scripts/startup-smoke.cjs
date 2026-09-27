@@ -15,6 +15,12 @@ async function main(){
    await page.getByRole('button',{name:'Bibliothèque audio',exact:true}).click();
    await page.getByRole('button',{name:'Eddie Winter',exact:true}).click();
    assert.equal(await page.locator('article').count(),10);
+   await page.getByRole('button',{name:'Bibliothèque de cartes',exact:true}).click();
+   await page.locator('.map-cards article').filter({hasText:'Smoky Waters · Station météo'}).getByRole('button',{name:'Afficher sur le Pip-Boy',exact:true}).click();
+   await page.getByRole('heading',{name:'Smoky Waters · Station météo',exact:false}).waitFor();
+   await page.getByRole('img',{name:'Smoky Waters · Station météo',exact:true}).evaluate(img=>img.decode());
+   await page.getByRole('button',{name:'Vue joueur',exact:true}).click();
+   await page.getByRole('heading',{name:'Smoky Waters · Station météo',exact:false}).waitFor();
    assert.deepEqual(errors,[]);await context.close();
    const partial=await browser.newContext();await partial.addInitScript(()=>localStorage.setItem('pipboy-demo-v1',JSON.stringify({name:'Campagne conservée',entries:[{id:'old',type:'location',title:'Mon lieu',visible:true}]})));
    const partialPage=await partial.newPage();await partialPage.goto('http://127.0.0.1:4173');await partialPage.getByRole('heading',{name:'Le Commonwealth',exact:false}).waitFor();await partialPage.getByText('Campagne conservée',{exact:true}).waitFor();
