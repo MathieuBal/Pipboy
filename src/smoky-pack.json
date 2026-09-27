@@ -1,0 +1,1303 @@
+{
+  "title": "Abri 50 — Mission Smoky Waters",
+  "version": 1,
+  "entries": [
+    {
+      "id": "smoky-portrait-superviseur",
+      "type": "person",
+      "title": "Le Superviseur",
+      "summary": "Le responsable de l’Abri 50.",
+      "body": "Il vous a confié la mission d’installer une balise à Smoky Waters et de rapporter des observations sur la surface.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert",
+      "image": "superviseur"
+    },
+    {
+      "id": "smoky-portrait-securite",
+      "type": "person",
+      "title": "Chef de la sécurité",
+      "summary": "Responsable de la sécurité de l’Abri 50.",
+      "body": "Il supervise votre départ au sas. « Bonne chance. Que vous reveniez ou non, faites honneur à l’Abri. »",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert",
+      "image": "securite"
+    },
+    {
+      "id": "smoky-portrait-evie",
+      "type": "person",
+      "title": "Evelyn « Evie » Carter",
+      "summary": "Marchande rencontrée à la station-service.",
+      "body": "Evie est une goule. Elle dirige les affaires de son groupe et sait négocier. Ses compagnons sont Warren Briggs et Roy Miller.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert",
+      "image": "evie"
+    },
+    {
+      "id": "smoky-portrait-warren",
+      "type": "person",
+      "title": "Warren Briggs",
+      "summary": "Mercenaire accompagnant les marchands.",
+      "body": "Warren assure la protection du groupe d’Evie. Il reste attentif, toujours une main à proximité de son arme.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert",
+      "image": "warren"
+    },
+    {
+      "id": "smoky-portrait-roy",
+      "type": "person",
+      "title": "Roy Miller",
+      "summary": "Mécanicien des marchands.",
+      "body": "Roy tente de remettre en état une camionnette d’avant-guerre à la station-service. Il a déjà bien avancé, mais certains composants sont grillés.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert",
+      "image": "roy"
+    },
+    {
+      "id": "smoky-portrait-julius",
+      "type": "person",
+      "title": "Julius Kessler",
+      "summary": "Maire de Jefferson.",
+      "body": "Homme imposant et respecté, Julius gère les affaires de la communauté depuis la mairie.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert",
+      "image": "julius"
+    },
+    {
+      "id": "smoky-portrait-martha",
+      "type": "person",
+      "title": "Martha Quinn",
+      "summary": "Aubergiste du Rat d’Cave.",
+      "body": "Robuste et chaleureuse, Martha tient l’auberge avec fermeté. Elle propose repas et couchages en échange de capsules ou d’un service.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert",
+      "image": "martha"
+    },
+    {
+      "id": "smoky-portrait-griff",
+      "type": "person",
+      "title": "Frank « Griff » Griffith",
+      "summary": "Marchand d’armes de Jefferson.",
+      "body": "Griff propose des armes et des munitions. Il est toujours prêt à négocier.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert",
+      "image": "griff"
+    },
+    {
+      "id": "smoky-portrait-rosie",
+      "type": "person",
+      "title": "Rosie Wheeler",
+      "summary": "Marchande de récupération.",
+      "body": "Rosie vend un peu de tout, surtout des pièces et de la ferraille.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert",
+      "image": "rosie"
+    },
+    {
+      "id": "smoky-portrait-henley",
+      "type": "person",
+      "title": "Doc Henley",
+      "summary": "Médecin itinérant.",
+      "body": "Doc Henley propose des soins et des médicaments en échange de capsules ou de faveurs.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert",
+      "image": "henley"
+    },
+    {
+      "id": "smoky-portrait-mouche",
+      "type": "creature",
+      "title": "Mouche mutante",
+      "summary": "Une énorme mouche des Terres désolées.",
+      "body": "Son bourdonnement précède son approche.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert",
+      "image": "mouche"
+    },
+    {
+      "id": "smoky-portrait-jeune-fangeux",
+      "type": "creature",
+      "title": "Jeune fangeux",
+      "summary": "Une jeune créature du marais.",
+      "body": "Elle se déplace entre les eaux troubles et la vase.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert",
+      "image": "jeune-fangeux"
+    },
+    {
+      "id": "smoky-portrait-fangeux",
+      "type": "creature",
+      "title": "Fangeux adulte",
+      "summary": "Une créature cuirassée des marais.",
+      "body": "Sa carapace émerge au-dessus des eaux opaques.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert",
+      "image": "fangeux"
+    },
+    {
+      "id": "smoky-portrait-chasseur",
+      "type": "creature",
+      "title": "Chasseur fangeux",
+      "summary": "Une autre forme de fangeux.",
+      "body": "Une silhouette menaçante surgie des eaux du marais.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert",
+      "image": "chasseur"
+    },
+    {
+      "id": "smoky-portrait-brahmine",
+      "type": "creature",
+      "title": "Brahmine",
+      "summary": "Un bovin à deux têtes.",
+      "body": "Une forme de vie inconnue des habitants de l’Abri.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert",
+      "image": "brahmine"
+    },
+    {
+      "id": "smoky-portrait-radcafard",
+      "type": "creature",
+      "title": "Radcafard",
+      "summary": "Un insecte mutant.",
+      "body": "Les habitants de la surface en font parfois leur repas.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert",
+      "image": "radcafard"
+    },
+    {
+      "id": "smoky-lieu-abri",
+      "type": "location",
+      "title": "Abri 50",
+      "summary": "Votre foyer souterrain, au sud de Columbia.",
+      "body": "En 2192, l’Abri organise une nouvelle expédition en surface : l’équipe 23.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert",
+      "mapId": "smoky-region",
+      "x": 0.19,
+      "y": 0.14
+    },
+    {
+      "id": "smoky-lieu-deer",
+      "type": "location",
+      "title": "Deer Park",
+      "summary": "Un ancien bourg en ruines.",
+      "body": "Façades éventrées, bâtiments silencieux et panneau rouillé : « Bienvenue à Deer Park — Une ville pour l’avenir ».",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert",
+      "mapId": "smoky-region",
+      "x": 0.33,
+      "y": 0.34
+    },
+    {
+      "id": "smoky-lieu-jefferson",
+      "type": "location",
+      "title": "Jefferson",
+      "summary": "Une communauté installée dans les ruines de Jefferson City.",
+      "body": "Tôle, bois et béton forment une enclave habitée près du Missouri.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert",
+      "mapId": "smoky-region",
+      "x": 0.46,
+      "y": 0.66
+    },
+    {
+      "id": "smoky-lieu-reserve",
+      "type": "location",
+      "title": "Réserve de Smoky Waters",
+      "summary": "L’emplacement de l’ancienne station météo.",
+      "body": "La réserve naturelle abritait autrefois des forêts, des rivières et des marais.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert",
+      "mapId": "smoky-region",
+      "x": 0.83,
+      "y": 0.73
+    },
+    {
+      "id": "smoky-lieu-bureau",
+      "type": "location",
+      "title": "Bureau du Superviseur",
+      "summary": "Le centre de commandement de l’Abri.",
+      "body": "Les relevés des capteurs et votre itinéraire apparaissent sur les écrans.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert",
+      "mapId": "smoky-abri",
+      "x": 0.46,
+      "y": 0.15
+    },
+    {
+      "id": "smoky-lieu-archives",
+      "type": "location",
+      "title": "Archives de l’Abri",
+      "summary": "Les informations conservées sur le monde extérieur.",
+      "body": "Des documents d’avant-guerre décrivent Smoky Waters.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert",
+      "mapId": "smoky-abri",
+      "x": 0.19,
+      "y": 0.16
+    },
+    {
+      "id": "smoky-lieu-infirmerie",
+      "type": "location",
+      "title": "Infirmerie de l’Abri",
+      "summary": "Le service médical des résidents.",
+      "body": "Le médecin y conserve les réserves de soins.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert",
+      "mapId": "smoky-abri",
+      "x": 0.2,
+      "y": 0.4
+    },
+    {
+      "id": "smoky-lieu-securite",
+      "type": "location",
+      "title": "Poste de sécurité",
+      "summary": "Le poste des agents de l’Abri.",
+      "body": "Armes et munitions sont sous contrôle de la sécurité.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert",
+      "mapId": "smoky-abri",
+      "x": 0.65,
+      "y": 0.39
+    },
+    {
+      "id": "smoky-lieu-cuisine",
+      "type": "location",
+      "title": "Cuisine de l’Abri",
+      "summary": "Le lieu de préparation des repas.",
+      "body": "Les vivres sont rationnés pour préserver les réserves.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert",
+      "mapId": "smoky-abri",
+      "x": 0.2,
+      "y": 0.62
+    },
+    {
+      "id": "smoky-lieu-sas",
+      "type": "location",
+      "title": "Sas extérieur",
+      "summary": "La grande porte circulaire de l’Abri 50.",
+      "body": "Au-delà de cette porte commence votre première exploration de la surface.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert",
+      "mapId": "smoky-abri",
+      "x": 0.68,
+      "y": 0.65
+    },
+    {
+      "id": "smoky-lieu-garage",
+      "type": "location",
+      "title": "Station-service de Deer Park",
+      "summary": "Un ancien garage à la sortie du bourg.",
+      "body": "Une camionnette d’avant-guerre est immobilisée près de l’atelier.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert",
+      "mapId": "smoky-deer",
+      "x": 0.76,
+      "y": 0.29
+    },
+    {
+      "id": "smoky-lieu-mairie",
+      "type": "location",
+      "title": "Mairie de Jefferson",
+      "summary": "Le centre administratif de la communauté.",
+      "body": "Le maire y reçoit les visiteurs et s’occupe des affaires du village.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert",
+      "mapId": "smoky-jefferson",
+      "x": 0.48,
+      "y": 0.17
+    },
+    {
+      "id": "smoky-lieu-auberge",
+      "type": "location",
+      "title": "Auberge du Rat d’Cave",
+      "summary": "Un endroit pour manger et se reposer.",
+      "body": "Repas chauds et lits rudimentaires sont proposés contre paiement ou service.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert",
+      "mapId": "smoky-jefferson",
+      "x": 0.2,
+      "y": 0.54
+    },
+    {
+      "id": "smoky-lieu-marche",
+      "type": "location",
+      "title": "Marché de Jefferson",
+      "summary": "Des étals d’armes, de vivres et de récupération.",
+      "body": "Les habitants viennent ici échanger les ressources utiles à leur survie.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert",
+      "mapId": "smoky-jefferson",
+      "x": 0.73,
+      "y": 0.46
+    },
+    {
+      "id": "smoky-lieu-station",
+      "type": "location",
+      "title": "Station météo",
+      "summary": "Un petit bâtiment en béton au cœur du marais.",
+      "body": "Fissurée et couverte de mousse, la station paraît encore debout. C’est ici que la balise doit être installée.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert",
+      "mapId": "smoky-station",
+      "x": 0.58,
+      "y": 0.35
+    },
+    {
+      "id": "smoky-doc-ordre",
+      "type": "document",
+      "title": "Ordre de mission — Équipe 23",
+      "summary": "Instructions du Superviseur.",
+      "body": "Rejoindre l’ancienne station météo de Smoky Waters. Installer la balise pour transmettre à l’Abri les données sur les radiations, le climat et les sols. Observer les transformations de la faune et de la flore ; prélever des échantillons si possible. Rapporter vos observations à l’Abri 50.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert"
+    },
+    {
+      "id": "smoky-doc-archives",
+      "type": "document",
+      "title": "Smoky Waters avant-guerre",
+      "summary": "Extrait des archives de l’Abri.",
+      "body": "Smoky Waters était une réserve naturelle : forêts denses, rivières sinueuses et marais embrumés. Plus d’un siècle a passé depuis la Grande Guerre ; ces documents ne décrivent pas nécessairement le terrain actuel.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert"
+    },
+    {
+      "id": "smoky-doc-itineraire",
+      "type": "document",
+      "title": "Itinéraire de l’expédition",
+      "summary": "Coordonnées de la station disponibles sur votre Pip-Boy.",
+      "body": "La carte intégrée date d’avant-guerre. La route mène vers Jefferson City ; Smoky Waters se trouve au-delà du Missouri. Le terrain a pu changer depuis l’établissement de la carte.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert"
+    },
+    {
+      "id": "smoky-doc-capsules",
+      "type": "document",
+      "title": "Les capsules",
+      "summary": "Un moyen de paiement de la surface.",
+      "body": "Les habitants utilisent des capsules comme monnaie. Gardez celles que vous obtenez : elles peuvent servir à acheter des vivres, des soins ou du matériel.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert"
+    },
+    {
+      "id": "smoky-doc-paris",
+      "type": "document",
+      "title": "Le pari de Jefferson",
+      "summary": "Votre arrivée était attendue… à sa manière.",
+      "body": "Les habitants parient sur la date d’arrivée des équipes d’exploration de l’Abri 50. Le gagnant de cette édition remporte 1 000 capsules.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert"
+    },
+    {
+      "id": "smoky-doc-expeditions",
+      "type": "document",
+      "title": "Les équipes précédentes",
+      "summary": "Ce que les habitants disent des explorateurs.",
+      "body": "Des équipes de l’Abri passent régulièrement à Jefferson. Elles partent vers les marais et les habitants ne les voient jamais revenir.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert"
+    },
+    {
+      "id": "smoky-doc-attaques",
+      "type": "document",
+      "title": "Après les expéditions",
+      "summary": "Un constat rapporté par les habitants.",
+      "body": "Après le passage de chaque expédition, les attaques de fangeux diminuent pendant un temps. Certains disent que les créatures semblent alors repues.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert"
+    },
+    {
+      "id": "smoky-doc-lumieres",
+      "type": "document",
+      "title": "Rumeurs du marais",
+      "summary": "Des histoires entendues à Jefferson.",
+      "body": "On raconte que des lumières étranges et des bruits inquiétants viennent parfois des marais. Vous ne disposez d’aucune confirmation.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert"
+    },
+    {
+      "id": "smoky-doc-squelette",
+      "type": "document",
+      "title": "Une combinaison familière",
+      "summary": "Un vestige trouvé à l’entrée du marais.",
+      "body": "Un squelette repose à moitié enfoncé dans la boue. Les lambeaux de sa combinaison portent les couleurs et le numéro de l’Abri 50.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert"
+    },
+    {
+      "id": "smoky-doc-rapport",
+      "type": "document",
+      "title": "Rapport de retour",
+      "summary": "Trame pour vos observations.",
+      "body": "Itinéraire suivi :\nRencontres et communautés :\nFaune et flore observées :\nÉchantillons rapportés :\nÉtat de la station et de la balise :\nDangers constatés :\nRecommandations pour l’Abri :",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert"
+    },
+    {
+      "id": "smoky-objet-pipboy",
+      "type": "item",
+      "title": "Pip-Boy 3000",
+      "summary": "Votre terminal personnel.",
+      "body": "Il contient les coordonnées GPS de la station météo et une carte d’avant-guerre.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert"
+    },
+    {
+      "id": "smoky-objet-balise",
+      "type": "item",
+      "title": "Balise de transmission",
+      "summary": "L’équipement indispensable à la mission.",
+      "body": "À installer sur l’ancienne station météo de Smoky Waters afin de transmettre les données à l’Abri 50.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert"
+    },
+    {
+      "id": "smoky-objet-rations",
+      "type": "item",
+      "title": "Provisions de l’expédition",
+      "summary": "Le nécessaire pour un voyage estimé à trois jours.",
+      "body": "L’Abri fournit des provisions pour trois jours, pas davantage. Leur répartition et leur consommation sont suivies avec le MJ.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert"
+    },
+    {
+      "id": "smoky-objet-stimpaks",
+      "type": "item",
+      "title": "Stimpaks supplémentaires",
+      "summary": "Des soins obtenus à l’infirmerie.",
+      "body": "À ajouter à l’inventaire uniquement si le médecin vous en remet. Quantité et effets : voir avec le MJ et le livre de base.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert"
+    },
+    {
+      "id": "smoky-objet-radaway",
+      "type": "item",
+      "title": "RadAway supplémentaire",
+      "summary": "Un traitement fourni par l’infirmerie.",
+      "body": "À ajouter uniquement s’il vous est remis. Quantité et effets : voir avec le MJ et le livre de base.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert"
+    },
+    {
+      "id": "smoky-objet-10mm",
+      "type": "item",
+      "title": "Munitions de 10 mm",
+      "summary": "Des cartouches remises par la sécurité.",
+      "body": "À ajouter uniquement si vous les obtenez. La quantité est déterminée par le MJ.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert"
+    },
+    {
+      "id": "smoky-objet-vivres",
+      "type": "item",
+      "title": "Rations supplémentaires",
+      "summary": "Un complément pour le voyage.",
+      "body": "À ajouter uniquement si le cuisinier accepte de vous aider. Quantité déterminée par le MJ.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert"
+    },
+    {
+      "id": "smoky-objet-echantillons",
+      "type": "item",
+      "title": "Échantillons de surface",
+      "summary": "Votre collecte pour les scientifiques de l’Abri.",
+      "body": "Notez avec le MJ l’origine et les conditions de prélèvement de chaque échantillon de faune ou de flore.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert"
+    },
+    {
+      "id": "smoky-objet-camionnette",
+      "type": "item",
+      "title": "Camionnette des marchands",
+      "summary": "Un véhicule d’avant-guerre en réparation.",
+      "body": "Le groupe d’Evie tente de le remettre en marche. Ce véhicule appartient aux marchands.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert"
+    },
+    {
+      "id": "smoky-objet-repas",
+      "type": "item",
+      "title": "Radcafard grillé",
+      "summary": "Un repas proposé par les marchands.",
+      "body": "Une découverte culinaire de la surface, offerte en remerciement de votre aide.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert"
+    },
+    {
+      "id": "smoky-quete-mission",
+      "type": "quest",
+      "title": "Mission Smoky Waters",
+      "summary": "Installer la balise de l’Abri 50.",
+      "body": "Rejoindre la réserve, atteindre la station météo et rétablir la transmission de données.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert"
+    },
+    {
+      "id": "smoky-quete-observer",
+      "type": "quest",
+      "title": "Observer la surface",
+      "summary": "Documenter le monde extérieur.",
+      "body": "Observer la faune et la flore mutantes. Prélever des échantillons lorsque cela est possible.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert"
+    },
+    {
+      "id": "smoky-quete-traverser",
+      "type": "quest",
+      "title": "Traverser le Missouri",
+      "summary": "Rejoindre l’autre rive.",
+      "body": "Passer par Jefferson City ou trouver une solution de traversée adaptée.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert"
+    },
+    {
+      "id": "smoky-quete-reparer",
+      "type": "quest",
+      "title": "Aider Roy",
+      "summary": "Remettre la camionnette en état.",
+      "body": "Examiner le véhicule avec Roy et remplacer les composants défectueux.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert"
+    },
+    {
+      "id": "smoky-quete-installer",
+      "type": "quest",
+      "title": "Installer la balise",
+      "summary": "Remettre la station en service.",
+      "body": "Repérer les branchements et l’alimentation, fixer la balise, effectuer les réglages et défendre le site.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert"
+    },
+    {
+      "id": "smoky-quete-avenir",
+      "type": "quest",
+      "title": "Choisir la suite",
+      "summary": "Votre mission ouvre de nouvelles possibilités.",
+      "body": "Retourner à l’Abri pour faire votre rapport, rester à Jefferson ou poursuivre l’exploration des Terres désolées.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert"
+    },
+    {
+      "id": "smoky-terminal-archives",
+      "type": "terminal",
+      "title": "Terminal des archives",
+      "summary": "Documents d’avant-guerre sur votre destination.",
+      "body": "Consultez les documents que le MJ vous a autorisé à lire.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert",
+      "links": [
+        "smoky-doc-archives",
+        "smoky-doc-itineraire"
+      ]
+    },
+    {
+      "id": "smoky-terminal-station",
+      "type": "terminal",
+      "title": "Terminal météo",
+      "summary": "Les commandes de l’ancienne station.",
+      "body": "L’état des branchements et de l’alimentation doit être examiné avant toute remise en service.",
+      "tags": [
+        "Smoky Waters"
+      ],
+      "visible": false,
+      "status": "Découvert"
+    }
+  ],
+  "notes": [
+    {
+      "id": "briefing",
+      "title": "1 · Briefing de l’équipe 23",
+      "mapId": "smoky-abri",
+      "readAloud": "Le Superviseur vous attend devant les relevés des capteurs. « Équipe 23, vous portez l’espoir de l’Abri 50. Vingt-deux équipes sont parties avant vous ; aucune n’a fait son rapport. Les radiations mesurées près de l’Abri permettent aujourd’hui d’envisager une vie en surface. Rejoignez Smoky Waters et installez cette balise sur l’ancienne station météo. Observez ce qui vit dehors. Tout ce que vous rapporterez pourra nous aider à reconstruire. »",
+      "gm": "Cadre : 2192, Abri 50 au sud de Columbia, Missouri. Initiation d’environ quatre heures pour un groupe de niveau 1. Le texte prévoit des habitants d’abri humains et un robot possible. Les prétirés annoncés ne sont pas fournis : préparer les personnages avec le livre de base. Le Superviseur dit vrai sur la mission ; le scénario ne révèle pas de complot organisé. Il refuse en secret d’entamer davantage les réserves. Le texte a une petite ambiguïté de calendrier entre les expéditions tous les cinq ans et la 23e équipe : garder l’année et le numéro, sans inventer une date de fondation précise.",
+      "tests": "Avant la séance : choisir les profils du livre de base pour PNJ et monstres, noter PV, défense et attaques. Aucun bloc de statistiques n’est fourni par le scénario. Présenter la mission et laisser les personnages poser leurs questions.",
+      "reveals": [
+        "smoky-portrait-superviseur",
+        "smoky-lieu-abri",
+        "smoky-lieu-bureau",
+        "smoky-doc-ordre",
+        "smoky-doc-itineraire",
+        "smoky-objet-pipboy",
+        "smoky-objet-balise",
+        "smoky-objet-rations",
+        "smoky-quete-mission",
+        "smoky-quete-observer"
+      ]
+    },
+    {
+      "id": "preparatifs",
+      "title": "2 · Derniers préparatifs",
+      "mapId": "smoky-abri",
+      "readAloud": "Le départ approche. Les couloirs de l’Abri vous sont familiers ; demain, plus rien ne le sera. L’infirmerie, le poste de sécurité, les cuisines et les archives restent accessibles avant la fermeture du sas.",
+      "gm": "Le médecin peut fournir Stimpaks et RadAway ; un agent de sécurité, des cartouches de 10 mm ; le cuisinier, des rations. Ces trois interlocuteurs n’ont pas de nom dans le scénario : ne pas les confondre avec Doc Henley ou Martha. Les quantités ne sont pas définies : les décider avant le jet et les noter. Rien n’est accordé automatiquement. Les archives décrivent seulement Smoky Waters avant-guerre. Le terminal est un support de consultation ajouté pour le Pip-Boy, pas une énigme supplémentaire.",
+      "tests": "Ressources officieuses : CHR + Troc, difficulté 2. Consulter les archives : aucun test imposé dans le texte. Ne pas ajouter de verrou arbitraire.",
+      "reveals": [
+        "smoky-lieu-archives",
+        "smoky-lieu-infirmerie",
+        "smoky-lieu-securite",
+        "smoky-lieu-cuisine",
+        "smoky-terminal-archives",
+        "smoky-doc-archives",
+        "smoky-objet-stimpaks",
+        "smoky-objet-radaway",
+        "smoky-objet-10mm",
+        "smoky-objet-vivres"
+      ]
+    },
+    {
+      "id": "sortie",
+      "title": "3 · Première lumière",
+      "mapId": "smoky-region",
+      "readAloud": "Les vérins s’ébranlent. La porte marquée 50 roule dans un fracas métallique. Un souffle de rouille et de terre humide vous frappe ; puis le soleil vous aveugle. Quand votre vue s’éclaircit, vous découvrez un sol craquelé, des carcasses de véhicules, du béton effondré et des arbres morts. Derrière vous, la porte se referme. Pour la première fois, vous êtes dehors.",
+      "gm": "Le chef de la sécurité souhaite bonne chance au groupe. Faire ressentir le contraste avec l’Abri sans infliger de pénalité non prévue. Le Pip-Boy donne la destination mais la carte est ancienne. En cas d’échec d’orientation, le texte ne fixe aucune sanction : proposer un détour ou une perte de temps raisonnable. Trajet annoncé : une journée à pied jusqu’à Jefferson, puis une demi-journée jusqu’à la station. Trois jours de provisions au total.",
+      "tests": "Orientation du guide : PER + Survie, difficulté 1. Pas de rencontre aléatoire obligatoire sur cette portion.",
+      "reveals": [
+        "smoky-portrait-securite",
+        "smoky-lieu-sas",
+        "smoky-lieu-abri",
+        "smoky-lieu-deer",
+        "smoky-lieu-jefferson",
+        "smoky-lieu-reserve",
+        "smoky-objet-echantillons"
+      ]
+    },
+    {
+      "id": "mouches",
+      "title": "4 · Deer Park : la carcasse",
+      "mapId": "smoky-deer",
+      "readAloud": "Un panneau penché vous accueille : « Bienvenue à Deer Park — Une ville pour l’avenir ». Plus loin sur la route, une vache à deux têtes gît, gonflée par la décomposition. Un bourdonnement monte soudain. Trois énormes mouches jaillissent de la carcasse et foncent vers vous.",
+      "gm": "Première rencontre de combat : trois mouches mutantes. Les trois pions sont préparés autour de la carcasse visible sur la carte ; les révéler au déclenchement. La brahmine est morte, ce n’est pas un quatrième adversaire. Expliquer initiative, couvert, déplacements et actions progressivement. Récompenser les idées sans inventer de butin chiffré. Les statistiques sont à prendre dans le livre de base, pas dans les descriptions des fiches.",
+      "tests": "Combat : trois mouches mutantes, selon les règles du livre de base. Après le combat : PER + Survie, difficulté 1, pour repérer l’activité à la station-service.",
+      "reveals": [
+        "smoky-lieu-deer",
+        "smoky-portrait-brahmine",
+        "smoky-portrait-mouche"
+      ]
+    },
+    {
+      "id": "marchands",
+      "title": "5 · Les marchands du garage",
+      "mapId": "smoky-deer",
+      "readAloud": "Des voix et le bruit d’outils viennent d’une station-service. Une femme à la peau profondément altérée surveille les affaires. Un homme armé reste sur ses gardes. Un troisième travaille sur une camionnette, le visage couvert d’huile et de poussière.",
+      "gm": "Evie : marchande goule, mène les négociations ; elle constitue la première rencontre des personnages avec une goule. Warren : mercenaire protecteur, vigilant mais pas automatiquement hostile. Roy : mécano absorbé par le véhicule. Tous sont curieux et bienveillants, surpris de voir des habitants d’abri. Ils veulent aller à Jefferson pour affaires et posent des questions sur l’Abri 50. Ne pas forcer les joueurs à leur faire confiance. Une approche discrète réussie permet d’entendre leur destination avant de se montrer.",
+      "tests": "Approche discrète : Discrétion, difficulté 1 (caractéristique non précisée par le texte). Réparation du véhicule : INT + Réparation, difficulté 3. Succès : repas de radcafard grillé ; si la confiance est gagnée, transport possible jusqu’à Jefferson. Ce n’est pas une acquisition de la camionnette.",
+      "reveals": [
+        "smoky-lieu-garage",
+        "smoky-portrait-evie",
+        "smoky-portrait-warren",
+        "smoky-portrait-roy",
+        "smoky-objet-camionnette",
+        "smoky-quete-reparer",
+        "smoky-portrait-radcafard",
+        "smoky-objet-repas"
+      ]
+    },
+    {
+      "id": "fleuve",
+      "title": "6 · La route et le Missouri",
+      "mapId": "smoky-region",
+      "readAloud": "Au-delà des ruines, le Missouri coupe votre route. Dans la direction de Jefferson, des signes d’activité humaine se distinguent. Il existe encore des gens qui vivent dehors.",
+      "gm": "Jefferson est le seul passage accessible à pied dans le scénario. Éviter la ville reste possible : trouver une embarcation, la réparer et traverser le fleuve. Les dangers, difficultés et caractéristiques du bateau ne sont pas définis. Une rencontre avec des fangeux est possible, pas automatique. Même s’ils évitent la ville, les joueurs remarquent de l’activité humaine. Cette branche est une improvisation encadrée, sans imposer un retour forcé au chemin principal.",
+      "tests": "Aucun jet chiffré imposé pour l’embarcation. Choisir les tests selon le plan des joueurs et le livre de base ; annoncer la difficulté avant le lancer. Temps nominal à pied jusqu’à Jefferson : une journée depuis l’Abri.",
+      "reveals": [
+        "smoky-lieu-jefferson",
+        "smoky-quete-traverser"
+      ]
+    },
+    {
+      "id": "jefferson",
+      "title": "7 · Bienvenue à Jefferson",
+      "mapId": "smoky-jefferson",
+      "readAloud": "La ville est un assemblage de bois, de tôle et de béton, mais elle vit. Sur la place, un homme bondit de sa chaise : « J’ai gagné ! J’ai gagné ! » Il court vers la mairie. Certains habitants éclatent de rire ; d’autres sortent des poignées de capsules en grognant.",
+      "gm": "Le gagnant vient de remporter 1 000 capsules grâce au pari sur la date d’arrivée de l’équipe de l’Abri. Cette somme ne revient pas aux personnages. Les habitants sont surtout accueillants et curieux ; quelques-uns peuvent tenter de voler un objet qui les fascine. Ne pas transformer chaque habitant en adversaire. Introduire ici les capsules comme monnaie. Les prix, tarifs de soins et services demandés ne sont pas chiffrés dans le scénario : préparer une offre adaptée sans attribuer de valeurs officielles inventées.",
+      "tests": "Aucun test obligatoire à l’arrivée. Pour un vol éventuel, appliquer le livre de base ; pas de perte automatique d’un objet de mission. Mairie : Julius Kessler. Auberge : Martha Quinn. Marché : Griff, Rosie et Doc Henley.",
+      "reveals": [
+        "smoky-lieu-jefferson",
+        "smoky-lieu-mairie",
+        "smoky-lieu-auberge",
+        "smoky-lieu-marche",
+        "smoky-portrait-julius",
+        "smoky-portrait-martha",
+        "smoky-portrait-griff",
+        "smoky-portrait-rosie",
+        "smoky-portrait-henley",
+        "smoky-doc-capsules",
+        "smoky-doc-paris"
+      ]
+    },
+    {
+      "id": "indices",
+      "title": "8 · Ce que savent les habitants",
+      "mapId": "smoky-jefferson",
+      "readAloud": "Au fil des conversations, votre uniforme revient sans cesse dans les regards et les questions. « On en a déjà vu, des gens de chez vous… Ils partent toujours vers les marais. »",
+      "gm": "Distribuer les indices au fil des échanges, sans tout lire d’un bloc. 1 : les habitants ignorent le vrai but des expéditions. 2 : les équipes partent vers les marais et ne reviennent jamais. 3 : les attaques de fangeux diminuent après chaque expédition ; les créatures paraissent repues. C’est l’indice inquiétant central. 4 : lumières et bruits étranges sont des rumeurs, une fausse piste explicitement indiquée par le scénario. Ne pas inventer une installation secrète pour l’expliquer. Julius a peu d’informations sur les anciennes équipes. Les joueurs doivent conserver la liberté de tirer leurs conclusions.",
+      "tests": "Aucun test de persuasion obligatoire dans le texte. Offrir les informations lorsque les joueurs interrogent les habitants ; un bon échange suffit. Le squelette du marais confirmera plus tard le danger.",
+      "reveals": [
+        "smoky-doc-expeditions",
+        "smoky-doc-attaques",
+        "smoky-doc-lumieres"
+      ]
+    },
+    {
+      "id": "marais",
+      "title": "9 · Cinq zones jusqu’à la station",
+      "mapId": "smoky-station",
+      "readAloud": "Une odeur âcre flotte sur les eaux stagnantes. Le bourdonnement des insectes et quelques remous troublent le silence. Tout près, un squelette à moitié enfoncé dans la boue porte encore des lambeaux de combinaison de l’Abri 50. Au loin, la station météo se dresse, fissurée mais debout.",
+      "gm": "Demi-journée depuis Jefferson. En narration, diviser l’approche en cinq zones. Découpage proposé pour cette carte (aide MJ, non officiel) : 1 entrée et squelette, 2 premier passage de vase, 3 passerelle basse, 4 îlot intermédiaire, 5 parvis de la station. Un test de discrétion de groupe évite l’alerte durant l’approche ; le scénario ne demande pas cinq tests successifs. Succès : arrivée discrète. Échec : les vagues commencent avant l’arrivée. Même en cas de succès, le bruit de l’installation finit par attirer les fangeux.",
+      "tests": "Discrétion de groupe : difficulté égale au nombre de joueurs, conformément au texte. Les caractéristiques et modalités du test de groupe sont à appliquer selon le livre de base. Ne pas compter automatiquement un compagnon animal comme un joueur.",
+      "reveals": [
+        "smoky-lieu-reserve",
+        "smoky-lieu-station",
+        "smoky-doc-squelette",
+        "smoky-quete-installer"
+      ]
+    },
+    {
+      "id": "balise",
+      "title": "10 · Installer sous pression",
+      "mapId": "smoky-station",
+      "readAloud": "Les consoles ont traversé plus d’un siècle de silence. Vous devez trouver comment les alimenter et fixer la balise. Dehors, l’eau bouge. Quelque chose a entendu votre arrivée.",
+      "gm": "Effort du test étendu : 20. Le champ « Progrès » est vide dans le document fourni. La difficulté des tests, les autres paramètres éventuels et les conséquences précises ne sont pas renseignés : les arrêter avec le Guide du MJ avant la séance. Le compteur de cette page est un suivi manuel de l’effort restant ; il ne calcule pas les réussites ou percées. Favoriser des tâches complémentaires : technique, soutien physique, surveillance et défense. L’installation déclenche l’attaque si le groupe n’avait pas déjà été repéré.",
+      "tests": "Exemples du scénario : PER + Réparation ou Science pour examiner branchements, alimentation et état ; INT + Réparation pour installation et réglages ; FOR + Athlétisme pour soutenir/fixer la balise ou déplacer un ordinateur. Autres combinaisons selon les idées des joueurs. Ne pas attribuer de difficulté absente du texte sans décision MJ.",
+      "reveals": [
+        "smoky-lieu-station",
+        "smoky-terminal-station",
+        "smoky-objet-balise",
+        "smoky-quete-installer",
+        "smoky-portrait-jeune-fangeux",
+        "smoky-portrait-fangeux",
+        "smoky-portrait-chasseur"
+      ]
+    },
+    {
+      "id": "vagues",
+      "title": "11 · Vagues de fangeux",
+      "mapId": "smoky-station",
+      "readAloud": "Des formes percent l’eau opaque. Leurs carapaces ruissellent tandis qu’elles gagnent la berge. Derrière elles, le marais continue de s’agiter.",
+      "gm": "Début de chaque tour : lancer 3 dés de combat, puis +1 dé tous les deux tours. Repère de suivi proposé : tours 1–2 : 3 dés ; 3–4 : 4 dés ; 5–6 : 5 dés. Chaque dégât fait apparaître un jeune fangeux ; chaque effet, un adulte ; deux effets font venir un chasseur. Le texte ne précise pas si le chasseur remplace les adultes ou s’ajoute, ni comment cumuler dégâts et effets d’un même dé : fixer cette lecture avant le combat. Six zones d’eau sont matérialisées par des repères secrets E1 à E6 ; lancer 1d6 pour le point d’apparition. Ces emplacements sont une interprétation de la carte générée, pas ceux d’une battlemap officielle. Les trois pions de fangeux placés sont des réserves secrètes à dupliquer et déplacer après le résultat ; ils ne constituent pas une vague imposée.",
+      "tests": "Utiliser de vrais dés de combat selon le livre de base, pas un d6 converti arbitrairement. Révéler uniquement les créatures réellement apparues. Noter les PV sur la feuille de combat du livre. Pour une joueuse seule, calibrer avant la partie : le scénario est conçu pour un groupe de niveau 1 et son escalade peut être rude. Variante conseillée à décider : limiter les arrivées et faire privilégier la fuite, sans la présenter comme règle officielle.",
+      "reveals": [
+        "smoky-portrait-jeune-fangeux",
+        "smoky-portrait-fangeux",
+        "smoky-portrait-chasseur"
+      ]
+    },
+    {
+      "id": "fuite",
+      "title": "12 · La fuite et le choix",
+      "mapId": "smoky-region",
+      "readAloud": "La balise répond enfin. Les premières données peuvent rejoindre l’Abri. Il reste à quitter les marais. Quand le bruit de l’eau s’éloigne derrière vous, une autre question prend sa place : où voulez-vous aller maintenant ?",
+      "gm": "Une fois la balise installée, permettre la percée et la fuite. Sur un échec, les personnages s’en sortent quand même, mais sont blessés ; les dégâts ne sont pas chiffrés dans le scénario. Ne pas bloquer la conclusion derrière un jet. Proposer les trois suites : retour à l’Abri pour un rapport, installation à Jefferson, ou départ dans les Terres désolées. La réaction du Superviseur reste ouverte : intérêt pour la surface ou peur renforcée. Aucune récompense chiffrée ni XP n’est fournie. Terminer les quêtes concernées dans le catalogue et recueillir les observations des joueurs.",
+      "tests": "Fuite : FOR ou END + Athlétisme, difficulté 1. Succès : fuite sans encombre. Échec : blessures mais fuite réussie. Ampleur des blessures à déterminer avec le livre de base. Révéler le rapport vierge et le choix d’avenir après l’évasion.",
+      "reveals": [
+        "smoky-doc-rapport",
+        "smoky-quete-avenir"
+      ]
+    }
+  ],
+  "tokens": [
+    {
+      "id": "smoky-token-equipe-smoky-region",
+      "name": "Équipe 23",
+      "mapId": "smoky-region",
+      "x": 0.19,
+      "y": 0.14,
+      "image": "",
+      "size": 0.06,
+      "color": "#d8ec82",
+      "visible": false
+    },
+    {
+      "id": "smoky-token-equipe-smoky-abri",
+      "name": "Équipe 23",
+      "mapId": "smoky-abri",
+      "x": 0.45,
+      "y": 0.24,
+      "image": "",
+      "size": 0.06,
+      "color": "#d8ec82",
+      "visible": false
+    },
+    {
+      "id": "smoky-token-equipe-smoky-deer",
+      "name": "Équipe 23",
+      "mapId": "smoky-deer",
+      "x": 0.4,
+      "y": 0.94,
+      "image": "",
+      "size": 0.06,
+      "color": "#d8ec82",
+      "visible": false
+    },
+    {
+      "id": "smoky-token-equipe-smoky-jefferson",
+      "name": "Équipe 23",
+      "mapId": "smoky-jefferson",
+      "x": 0.47,
+      "y": 0.92,
+      "image": "",
+      "size": 0.06,
+      "color": "#d8ec82",
+      "visible": false
+    },
+    {
+      "id": "smoky-token-equipe-smoky-station",
+      "name": "Équipe 23",
+      "mapId": "smoky-station",
+      "x": 0.13,
+      "y": 0.92,
+      "image": "",
+      "size": 0.06,
+      "color": "#d8ec82",
+      "visible": false
+    },
+    {
+      "id": "smoky-token-superviseur",
+      "name": "Le Superviseur",
+      "mapId": "smoky-abri",
+      "x": 0.45,
+      "y": 0.1,
+      "image": "superviseur",
+      "size": 0.06,
+      "color": "#a4ef91",
+      "visible": false
+    },
+    {
+      "id": "smoky-token-securite",
+      "name": "Chef de la sécurité",
+      "mapId": "smoky-abri",
+      "x": 0.66,
+      "y": 0.6,
+      "image": "securite",
+      "size": 0.06,
+      "color": "#a4ef91",
+      "visible": false
+    },
+    {
+      "id": "smoky-token-medecin",
+      "name": "Médecin de l’Abri",
+      "mapId": "smoky-abri",
+      "x": 0.24,
+      "y": 0.39,
+      "image": "",
+      "size": 0.06,
+      "color": "#a4ef91",
+      "visible": false
+    },
+    {
+      "id": "smoky-token-agent",
+      "name": "Agent de sécurité",
+      "mapId": "smoky-abri",
+      "x": 0.63,
+      "y": 0.39,
+      "image": "",
+      "size": 0.06,
+      "color": "#a4ef91",
+      "visible": false
+    },
+    {
+      "id": "smoky-token-cuisinier",
+      "name": "Cuisinier de l’Abri",
+      "mapId": "smoky-abri",
+      "x": 0.21,
+      "y": 0.58,
+      "image": "",
+      "size": 0.06,
+      "color": "#a4ef91",
+      "visible": false
+    },
+    {
+      "id": "smoky-token-mouche-1",
+      "name": "Mouche mutante 1",
+      "mapId": "smoky-deer",
+      "x": 0.35,
+      "y": 0.78,
+      "image": "mouche",
+      "size": 0.04,
+      "color": "#f2a275",
+      "visible": false
+    },
+    {
+      "id": "smoky-token-mouche-2",
+      "name": "Mouche mutante 2",
+      "mapId": "smoky-deer",
+      "x": 0.47,
+      "y": 0.8,
+      "image": "mouche",
+      "size": 0.04,
+      "color": "#f2a275",
+      "visible": false
+    },
+    {
+      "id": "smoky-token-mouche-3",
+      "name": "Mouche mutante 3",
+      "mapId": "smoky-deer",
+      "x": 0.43,
+      "y": 0.87,
+      "image": "mouche",
+      "size": 0.04,
+      "color": "#f2a275",
+      "visible": false
+    },
+    {
+      "id": "smoky-token-evie",
+      "name": "Evie",
+      "mapId": "smoky-deer",
+      "x": 0.57,
+      "y": 0.2,
+      "image": "evie",
+      "size": 0.06,
+      "color": "#a4ef91",
+      "visible": false
+    },
+    {
+      "id": "smoky-token-warren",
+      "name": "Warren",
+      "mapId": "smoky-deer",
+      "x": 0.66,
+      "y": 0.29,
+      "image": "warren",
+      "size": 0.06,
+      "color": "#a4ef91",
+      "visible": false
+    },
+    {
+      "id": "smoky-token-roy",
+      "name": "Roy",
+      "mapId": "smoky-deer",
+      "x": 0.8,
+      "y": 0.32,
+      "image": "roy",
+      "size": 0.06,
+      "color": "#a4ef91",
+      "visible": false
+    },
+    {
+      "id": "smoky-token-julius",
+      "name": "Julius Kessler",
+      "mapId": "smoky-jefferson",
+      "x": 0.48,
+      "y": 0.15,
+      "image": "julius",
+      "size": 0.06,
+      "color": "#a4ef91",
+      "visible": false
+    },
+    {
+      "id": "smoky-token-martha",
+      "name": "Martha Quinn",
+      "mapId": "smoky-jefferson",
+      "x": 0.11,
+      "y": 0.54,
+      "image": "martha",
+      "size": 0.06,
+      "color": "#a4ef91",
+      "visible": false
+    },
+    {
+      "id": "smoky-token-griff",
+      "name": "Griff",
+      "mapId": "smoky-jefferson",
+      "x": 0.75,
+      "y": 0.39,
+      "image": "griff",
+      "size": 0.06,
+      "color": "#a4ef91",
+      "visible": false
+    },
+    {
+      "id": "smoky-token-rosie",
+      "name": "Rosie Wheeler",
+      "mapId": "smoky-jefferson",
+      "x": 0.75,
+      "y": 0.49,
+      "image": "rosie",
+      "size": 0.06,
+      "color": "#a4ef91",
+      "visible": false
+    },
+    {
+      "id": "smoky-token-henley",
+      "name": "Doc Henley",
+      "mapId": "smoky-jefferson",
+      "x": 0.75,
+      "y": 0.59,
+      "image": "henley",
+      "size": 0.06,
+      "color": "#a4ef91",
+      "visible": false
+    },
+    {
+      "id": "smoky-token-emergence-1",
+      "name": "E1 · Émergence",
+      "mapId": "smoky-station",
+      "x": 0.16,
+      "y": 0.17,
+      "image": "",
+      "size": 0.04,
+      "color": "#92c9db",
+      "visible": false
+    },
+    {
+      "id": "smoky-token-emergence-2",
+      "name": "E2 · Émergence",
+      "mapId": "smoky-station",
+      "x": 0.47,
+      "y": 0.08,
+      "image": "",
+      "size": 0.04,
+      "color": "#92c9db",
+      "visible": false
+    },
+    {
+      "id": "smoky-token-emergence-3",
+      "name": "E3 · Émergence",
+      "mapId": "smoky-station",
+      "x": 0.84,
+      "y": 0.19,
+      "image": "",
+      "size": 0.04,
+      "color": "#92c9db",
+      "visible": false
+    },
+    {
+      "id": "smoky-token-emergence-4",
+      "name": "E4 · Émergence",
+      "mapId": "smoky-station",
+      "x": 0.85,
+      "y": 0.58,
+      "image": "",
+      "size": 0.04,
+      "color": "#92c9db",
+      "visible": false
+    },
+    {
+      "id": "smoky-token-emergence-5",
+      "name": "E5 · Émergence",
+      "mapId": "smoky-station",
+      "x": 0.65,
+      "y": 0.84,
+      "image": "",
+      "size": 0.04,
+      "color": "#92c9db",
+      "visible": false
+    },
+    {
+      "id": "smoky-token-emergence-6",
+      "name": "E6 · Émergence",
+      "mapId": "smoky-station",
+      "x": 0.17,
+      "y": 0.53,
+      "image": "",
+      "size": 0.04,
+      "color": "#92c9db",
+      "visible": false
+    },
+    {
+      "id": "smoky-token-jeune-fangeux",
+      "name": "Jeune fangeux · réserve",
+      "mapId": "smoky-station",
+      "x": 0.15,
+      "y": 0.23,
+      "image": "jeune-fangeux",
+      "size": 0.04,
+      "color": "#f2a275",
+      "visible": false
+    },
+    {
+      "id": "smoky-token-fangeux",
+      "name": "Fangeux adulte · réserve",
+      "mapId": "smoky-station",
+      "x": 0.85,
+      "y": 0.24,
+      "image": "fangeux",
+      "size": 0.06,
+      "color": "#f2a275",
+      "visible": false
+    },
+    {
+      "id": "smoky-token-chasseur",
+      "name": "Chasseur · réserve",
+      "mapId": "smoky-station",
+      "x": 0.74,
+      "y": 0.84,
+      "image": "chasseur",
+      "size": 0.09,
+      "color": "#f2a275",
+      "visible": false
+    }
+  ]
+}

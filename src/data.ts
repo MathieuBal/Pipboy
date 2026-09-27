@@ -1,7 +1,7 @@
 export type Kind = 'location'|'person'|'creature'|'item'|'document'|'quest'|'holotape'|'terminal';
 export type Entry = {id:string;type:Kind;title:string;summary:string;body:string;tags:string[];visible:boolean;status:string;x?:number;y?:number;audio?:string;image?:string;source?:string;sourceUrl?:string;links?:string[];mapId?:string};
 export type Token = {id:string;name:string;image:string;mapImage:string;x:number;y:number;size:number;color:string;visible:boolean};
-export type State = {name:string;entries:Entry[];tokens?:Token[];position:{x:number;y:number};mapImage:string;mapPositions?:Record<string,{x:number;y:number}>;log:{id:string;text:string;date:string}[]};
+export type State = {name:string;entries:Entry[];scenario?:{installed:boolean;completed:string[];round:number;effort:number;notes:string};tokens?:Token[];position:{x:number;y:number};mapImage:string;mapPositions?:Record<string,{x:number;y:number}>;log:{id:string;text:string;date:string}[]};
 export const labels:Record<Kind,string>={location:'Lieux',person:'Personnes',creature:'Faune',item:'Objets',document:'Documents',quest:'Quêtes',holotape:'Holobandes',terminal:'Terminaux'};
 const entry=(id:string,type:Kind,title:string,summary:string,body:string,extra:Partial<Entry>={}):Entry=>({id,type,title,summary,body,tags:[],visible:true,status:'Découvert',...extra});
 export const initial:State={name:'Les échos du silence',position:{x:.32,y:.55},mapImage:'',log:[],entries:[
