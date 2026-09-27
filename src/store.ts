@@ -1,4 +1,4 @@
-import {createClient} from '@supabase/supabase-js';
+import type {SupabaseClient} from '@supabase/supabase-js';
 import {initial,labels,type State} from './data';
 import {publicSupabaseConfig} from './supabase-public';
 const envUrl=import.meta.env.VITE_SUPABASE_URL,envKey=import.meta.env.VITE_SUPABASE_ANON_KEY;
@@ -10,7 +10,14 @@ const authStorage={
  setItem:(name:string,value:string)=>{authMemory.set(name,value);try{localStorage.setItem(name,value)}catch{/* Session lasts for this visit. */}},
  removeItem:(name:string)=>{authMemory.delete(name);try{localStorage.removeItem(name)}catch{/* Storage is unavailable. */}}
 };
-export const supabase=url&&key?createClient(url,key,{auth:{storage:authStorage}}):null;
+export let supabase:SupabaseClient|null=null;
+export let connectionUnavailable='';
+export async function initializeSupabase(){
+ if(!url||!key)return;
+ // The SDK reads a debug flag during module evaluation; check storage before importing it.
+ try{localStorage.getItem('pipboy-session')}catch{connectionUnavailable='Le stockage du navigateur est bloqué. Autorisez les données du site puis rechargez pour connecter une session.';return}
+ try{const {createClient}=await import('@supabase/supabase-js');supabase=createClient(url,key,{auth:{storage:authStorage}})}catch{connectionUnavailable='Le module de connexion n’a pas pu être chargé. Rechargez la page pour réessayer.'}
+}
 const STORAGE='pipboy-demo-v1';
 const cloneInitial=():State=>JSON.parse(JSON.stringify(initial));
 export function readDemo():State{
