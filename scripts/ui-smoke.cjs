@@ -151,6 +151,47 @@ async function main(){
  await page.getByRole('heading',{name:'Le Commonwealth',exact:false}).waitFor();
  assert.deepEqual(await position(),priorMapState.position);
  await page.getByRole('button',{name:'Vue joueur',exact:true}).click();
+ // Individual illustrations: private preview, secret preparation, reveal, enlarge and revoke.
+ await page.getByRole('button',{name:'Console MJ',exact:true}).click();
+ await page.getByRole('button',{name:'Illustrations',exact:true}).click();
+ await page.locator('.illustration-cards article').first().waitFor();
+ assert.equal(await page.locator('.illustration-cards article').count(),16);
+ for(const img of await page.locator('.illustration-cards img').all()){await img.scrollIntoViewIfNeeded();await img.evaluate(e=>e.decode())}
+ assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'Illustrations must fit mobile');
+ await page.getByRole('textbox',{name:'Rechercher une illustration'}).fill('Evie');
+ const evie=page.locator('.illustration-cards article').first();
+ await evie.getByRole('button',{name:'Prévisualiser',exact:true}).click();
+ await page.getByRole('dialog').getByRole('img',{name:'Evelyn « Evie » Carter',exact:true}).evaluate(img=>img.decode());
+ assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('pipboy-demo-v1')).entries.some(e=>e.id==='smoky-portrait-evie')),false);
+ await page.getByRole('button',{name:'Fermer l’illustration',exact:true}).click();
+ await evie.getByRole('button',{name:'Ajouter au catalogue',exact:true}).click();
+ await evie.getByRole('button',{name:'Ajoutée',exact:true}).waitFor();
+ assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('pipboy-demo-v1')).entries.find(e=>e.id==='smoky-portrait-evie').visible),false);
+ await page.getByRole('button',{name:'Vue joueur',exact:true}).click();
+ await page.getByRole('button',{name:'PERSONNES',exact:true}).click();
+ assert.equal(await page.getByRole('heading',{name:'Evelyn « Evie » Carter',exact:true}).count(),0);
+ assert.equal(await page.getByRole('button',{name:'Illustrations',exact:true}).count(),0);
+ await page.getByRole('button',{name:'Console MJ',exact:true}).click();
+ await page.getByRole('button',{name:'Illustrations',exact:true}).click();
+ await page.getByRole('textbox',{name:'Rechercher une illustration'}).fill('Evie');
+ await page.locator('.illustration-cards article').getByRole('button',{name:'Révéler au joueur',exact:true}).click();
+ await page.locator('.illustration-cards article').getByRole('button',{name:'Masquer',exact:true}).waitFor();
+ const disclosed=await page.evaluate(()=>JSON.parse(localStorage.getItem('pipboy-demo-v1')).entries.find(e=>e.id==='smoky-portrait-evie'));
+ assert.equal(disclosed.body,'');assert.deepEqual(disclosed.tags,[]);
+ await page.getByRole('button',{name:'Vue joueur',exact:true}).click();
+ await page.getByRole('button',{name:'PERSONNES',exact:true}).click();
+ await page.getByRole('heading',{name:'Evelyn « Evie » Carter',exact:true}).click();
+ await page.getByRole('button',{name:'Agrandir l’illustration de Evelyn « Evie » Carter',exact:true}).click();
+ await page.locator('.picture-viewer img').evaluate(img=>img.decode());
+ await page.getByRole('button',{name:'Fermer l’illustration',exact:true}).click();
+ await page.getByRole('dialog').getByRole('button',{name:'Fermer',exact:true}).click();
+ await page.getByRole('button',{name:'Console MJ',exact:true}).click();
+ await page.getByRole('button',{name:'Illustrations',exact:true}).click();
+ await page.getByRole('textbox',{name:'Rechercher une illustration'}).fill('Evie');
+ await page.locator('.illustration-cards article').getByRole('button',{name:'Masquer',exact:true}).click();
+ await page.getByRole('dialog').getByRole('button',{name:'Masquer',exact:true}).click();
+ await page.getByRole('button',{name:'Vue joueur',exact:true}).click();await page.getByRole('button',{name:'PERSONNES',exact:true}).click();
+ assert.equal(await page.getByRole('heading',{name:'Evelyn « Evie » Carter',exact:true}).count(),0);
  await fs.mkdir('test-results',{recursive:true});
  for(const width of [1440,390,320]){
   await page.setViewportSize({width,height:950});await page.getByRole('button',{name:'MAP',exact:true}).click();

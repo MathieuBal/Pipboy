@@ -21,6 +21,17 @@ async function main(){
    await page.getByRole('img',{name:'Smoky Waters · Station météo',exact:true}).evaluate(img=>img.decode());
    await page.getByRole('button',{name:'Vue joueur',exact:true}).click();
    await page.getByRole('heading',{name:'Smoky Waters · Station météo',exact:false}).waitFor();
+   await page.getByRole('button',{name:'Console MJ',exact:true}).click();
+   await page.getByRole('button',{name:'Illustrations',exact:true}).click();
+   await page.getByRole('textbox',{name:'Rechercher une illustration'}).fill('Roy');
+   await page.locator('.illustration-cards article').getByRole('button',{name:'Prévisualiser',exact:true}).click();
+   await page.locator('.picture-viewer img').evaluate(img=>img.decode());
+   await page.getByRole('button',{name:'Fermer l’illustration',exact:true}).click();
+   await page.locator('.illustration-cards article').getByRole('button',{name:'Révéler au joueur',exact:true}).click();
+   await page.locator('.illustration-cards article').getByRole('button',{name:'Masquer',exact:true}).waitFor();
+   await page.getByRole('button',{name:'Vue joueur',exact:true}).click();
+   await page.getByRole('button',{name:'PERSONNES',exact:true}).click();
+   await page.getByRole('heading',{name:'Roy Miller',exact:true}).waitFor();
    assert.deepEqual(errors,[]);await context.close();
    const partial=await browser.newContext();await partial.addInitScript(()=>localStorage.setItem('pipboy-demo-v1',JSON.stringify({name:'Campagne conservée',entries:[{id:'old',type:'location',title:'Mon lieu',visible:true}]})));
    const partialPage=await partial.newPage();await partialPage.goto('http://127.0.0.1:4173');await partialPage.getByRole('heading',{name:'Le Commonwealth',exact:false}).waitFor();await partialPage.getByText('Campagne conservée',{exact:true}).waitFor();

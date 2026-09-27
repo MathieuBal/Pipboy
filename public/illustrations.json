@@ -1,0 +1,116 @@
+{
+  "items": [
+    {
+      "id": "smoky-portrait-superviseur",
+      "title": "Le Superviseur",
+      "type": "person",
+      "group": "Abri 50",
+      "image": "illustrations/smoky/superviseur.webp"
+    },
+    {
+      "id": "smoky-portrait-securite",
+      "title": "Chef de la sécurité",
+      "type": "person",
+      "group": "Abri 50",
+      "image": "illustrations/smoky/securite.webp"
+    },
+    {
+      "id": "smoky-portrait-evie",
+      "title": "Evelyn « Evie » Carter",
+      "type": "person",
+      "group": "Deer Park",
+      "image": "illustrations/smoky/evie.webp"
+    },
+    {
+      "id": "smoky-portrait-warren",
+      "title": "Warren Briggs",
+      "type": "person",
+      "group": "Deer Park",
+      "image": "illustrations/smoky/warren.webp"
+    },
+    {
+      "id": "smoky-portrait-roy",
+      "title": "Roy Miller",
+      "type": "person",
+      "group": "Deer Park",
+      "image": "illustrations/smoky/roy.webp"
+    },
+    {
+      "id": "smoky-portrait-julius",
+      "title": "Julius Kessler",
+      "type": "person",
+      "group": "Jefferson",
+      "image": "illustrations/smoky/julius.webp"
+    },
+    {
+      "id": "smoky-portrait-martha",
+      "title": "Martha Quinn",
+      "type": "person",
+      "group": "Jefferson",
+      "image": "illustrations/smoky/martha.webp"
+    },
+    {
+      "id": "smoky-portrait-griff",
+      "title": "Frank « Griff » Griffith",
+      "type": "person",
+      "group": "Jefferson",
+      "image": "illustrations/smoky/griff.webp"
+    },
+    {
+      "id": "smoky-portrait-rosie",
+      "title": "Rosie Wheeler",
+      "type": "person",
+      "group": "Jefferson",
+      "image": "illustrations/smoky/rosie.webp"
+    },
+    {
+      "id": "smoky-portrait-henley",
+      "title": "Doc Henley",
+      "type": "person",
+      "group": "Jefferson",
+      "image": "illustrations/smoky/henley.webp"
+    },
+    {
+      "id": "smoky-portrait-mouche",
+      "title": "Mouche mutante",
+      "type": "creature",
+      "group": "Bestiaire",
+      "image": "illustrations/smoky/mouche.webp"
+    },
+    {
+      "id": "smoky-portrait-jeune-fangeux",
+      "title": "Jeune fangeux",
+      "type": "creature",
+      "group": "Bestiaire",
+      "image": "illustrations/smoky/jeune-fangeux.webp"
+    },
+    {
+      "id": "smoky-portrait-fangeux",
+      "title": "Fangeux adulte",
+      "type": "creature",
+      "group": "Bestiaire",
+      "image": "illustrations/smoky/fangeux.webp"
+    },
+    {
+      "id": "smoky-portrait-chasseur",
+      "title": "Chasseur fangeux",
+      "type": "creature",
+      "group": "Bestiaire",
+      "image": "illustrations/smoky/chasseur.webp"
+    },
+    {
+      "id": "smoky-portrait-brahmine",
+      "title": "Brahmine",
+      "type": "creature",
+      "group": "Bestiaire",
+      "image": "illustrations/smoky/brahmine.webp"
+    },
+    {
+      "id": "smoky-portrait-radcafard",
+      "title": "Radcafard",
+      "type": "creature",
+      "group": "Bestiaire",
+      "image": "illustrations/smoky/radcafard.webp"
+    }
+  ]
+}
