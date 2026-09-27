@@ -56,7 +56,7 @@ begin
 end $$;
 create function public.get_session(p_id uuid) returns jsonb
 language plpgsql security definer set search_path = '' as $$
-declare s public.campaign_sessions; filtered jsonb; players integer;
+declare s public.campaign_sessions; filtered jsonb; player_tokens jsonb; players integer;
 begin
  if not public.can_read_session(p_id) then raise exception 'Accès refusé'; end if;
  select * into s from public.campaign_sessions where id=p_id;
@@ -67,7 +67,8 @@ begin
  end if;
  -- Never send secret entries, private logs or invitation code to players.
  select coalesce(jsonb_agg(e),'[]'::jsonb) into filtered from jsonb_array_elements(s.state->'entries') e where e->>'visible'='true';
- return jsonb_build_object('state',jsonb_build_object('name',s.name,'position',s.state->'position','mapImage',s.state->'mapImage','entries',filtered,'log','[]'::jsonb),'role','player','revision',s.revision,'name',s.name,'members',players);
+ select coalesce(jsonb_agg(jsonb_build_object('id',t->'id','name',t->'name','image',t->'image','mapImage',t->'mapImage','x',t->'x','y',t->'y','size',t->'size','color',t->'color','visible',true)),'[]'::jsonb) into player_tokens from jsonb_array_elements(case when jsonb_typeof(s.state->'tokens')='array' then s.state->'tokens' else '[]'::jsonb end) t where t->'visible'='true'::jsonb and coalesce(t->>'mapImage','')=coalesce(s.state->>'mapImage','');
+ return jsonb_build_object('state',jsonb_build_object('name',s.name,'position',s.state->'position','mapImage',s.state->'mapImage','entries',filtered,'tokens',player_tokens,'log','[]'::jsonb),'role','player','revision',s.revision,'name',s.name,'members',players);
 end $$;
 create function public.save_session(p_id uuid,p_state jsonb,p_revision integer) returns integer
 language plpgsql security definer set search_path = '' as $$
