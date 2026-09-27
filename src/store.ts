@@ -1,6 +1,8 @@
 import {createClient} from '@supabase/supabase-js';
 import {initial,labels,type State} from './data';
-const url=import.meta.env.VITE_SUPABASE_URL,key=import.meta.env.VITE_SUPABASE_ANON_KEY;
+import {publicSupabaseConfig} from './supabase-public';
+const envUrl=import.meta.env.VITE_SUPABASE_URL,envKey=import.meta.env.VITE_SUPABASE_ANON_KEY;
+const {url,key}=envUrl&&envKey?{url:envUrl,key:envKey}:publicSupabaseConfig;
 export const supabase=url&&key?createClient(url,key):null;
 const STORAGE='pipboy-demo-v1';
 const cloneInitial=():State=>JSON.parse(JSON.stringify(initial));
