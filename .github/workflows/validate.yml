@@ -34,6 +34,8 @@ jobs:
         run: node scripts/scenario-smoke.cjs
       - name: Test fullscreen, shared pointer and campaign backups
         run: node scripts/comfort-smoke.cjs
+      - name: Test fog on mobile Chromium and Safari engine
+        run: node scripts/fog-smoke.cjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
