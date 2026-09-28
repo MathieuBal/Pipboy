@@ -24,7 +24,8 @@ async function main(){
  await gm.screenshot({path:`test-results/fog-gm-${name}.png`,fullPage:true});await player.screenshot({path:`test-results/fog-player-${name}.png`,fullPage:true});
  await gm.getByRole('button',{name:'Tout dévoiler',exact:true}).click();await count(player,0);await gm.getByRole('button',{name:'Annuler le dernier tracé',exact:true}).click();await count(player,63);
  await gm.reload();await gm.getByRole('button',{name:'Table de jeu',exact:true}).click();await count(gm,63);
- await gm.getByRole('button',{name:'Deer Park · Station-service',exact:true}).click();await count(gm,63);
+ await gm.getByRole('button',{name:'Commonwealth',exact:true}).click();await count(gm,0);await count(player,63);
+ await gm.getByRole('button',{name:'Deer Park · Station-service • En jeu',exact:true}).click();await count(gm,63);
  assert.deepEqual(errors,[]);console.log('PASS fog '+name+': private preparation, sync, token occlusion, touch, undo, persistence');await context.close();
  }finally{await browser.close()}}
 }
