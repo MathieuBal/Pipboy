@@ -9,8 +9,8 @@ async function main(){
  browser=await chromium.launch({headless:true});const page=await browser.newPage({viewport:{width:1440,height:1000}});
  const errors=[];page.on('pageerror',e=>errors.push(e.message));
  await page.goto('http://127.0.0.1:4173');
- await page.getByRole('img',{name:'Carte du Commonwealth — Fallout 4',exact:true}).evaluate(img=>img.decode());
- assert.equal(await page.locator('.map-canvas').evaluate(e=>Math.abs(e.getBoundingClientRect().width-e.getBoundingClientRect().height)<2),true,'Commonwealth map must stay square');
+ await page.getByRole('heading',{name:'En attente du MJ',exact:true}).waitFor();
+ assert.equal(await page.locator('.map-canvas').count(),0);
  await page.getByRole('button',{name:'Console MJ',exact:true}).click();
  await page.getByRole('button',{name:'Bibliothèque audio',exact:true}).click();
  await page.getByRole('heading',{name:'Bibliothèque d’holobandes',exact:false}).waitFor();
@@ -86,7 +86,7 @@ async function main(){
  await page.getByRole('button',{name:'Vue joueur',exact:true}).click();
  await page.getByRole('button',{name:'DATA',exact:true}).click();
  await page.getByLabel('Type de donnée').selectOption('quest');
- assert.equal(await page.locator('article').count(),1);
+ assert.equal(await page.locator('article').count(),0);
  await page.getByLabel('Type de donnée').selectOption('document');
  assert.equal(await page.getByRole('heading',{name:'Une voix dans les ruines',exact:true}).count(),0);
 
@@ -114,7 +114,7 @@ async function main(){
  // Blocked storage at startup no longer causes a blank terminal.
  const restricted=await browser.newContext();await restricted.addInitScript(()=>{Storage.prototype.getItem=function(){throw new DOMException('Blocked','SecurityError')}});
  const restrictedPage=await restricted.newPage();const restrictedErrors=[];restrictedPage.on('pageerror',e=>restrictedErrors.push(e.message));
- await restrictedPage.goto('http://127.0.0.1:4173');await restrictedPage.getByRole('heading',{name:'Le Commonwealth',exact:false}).waitFor();
+ await restrictedPage.goto('http://127.0.0.1:4173');await restrictedPage.getByRole('heading',{name:'En attente du MJ',exact:true}).waitFor();
  assert.deepEqual(restrictedErrors,[]);await restricted.close();
  // Maps stay private in preview, persist when displayed, and remember marker positions.
  await page.getByRole('button',{name:'Console MJ',exact:true}).click();

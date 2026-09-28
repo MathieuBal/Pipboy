@@ -1,0 +1,44 @@
+[
+  {
+    "id": "smoky-sheet-erine",
+    "type": "person",
+    "title": "Erine Wallace",
+    "summary": "Mécano · Habitant d’abri · Niveau 1",
+    "body": "SPECIAL : FOR 7 · PER 5 · END 5 · CHR 5 · INT 8 · AGI 5 · CHA 5.\nPV maximum : 10. Défense : 1. Initiative : 10. Bonus de dégâts au corps à corps : 1.\n\nCompétences renseignées : armes de corps à corps 3 (atout personnel), athlétisme 3, explosifs 2, mains nues 2, médecine 2, réparation 3 (atout personnel), sciences 3 (atout personnel), survie 3, troc 2.\n\nRésistances indiquées : tête, balistique 2 ; bras, buste et jambes, balistique 2 / énergie 1 / radiations 2. Les autres cases sont vides.\n\nArmes : pistolet 10 mm, dégâts 4 dés de combat, balistique, cadence 2, portée C, qualités Fiable et Combat rapproché ; clé serre-tube lourde, dégâts 4 dés de combat, balistique, portée corps à corps. Les SR sont laissés vides.\n\nÉquipement : 10 munitions de 10 mm ; gourde avec 3 doses d’eau purifiée ; 2 rations de nourriture ; kit de réparation de robot ; Pip-Boy ; multioutil ; 1 Mentats. Le multioutil porte la mention « réduit de 1 les test de réparation », sans précision supplémentaire.\n\nBricolage, rang 1 : réparation sans pièces détachées, temporaire ; l’objet se brise à la prochaine complication obtenue en l’utilisant. Marge de complication augmentée de 1.\n\nPV actuels, points de chance, capsules et autres champs non remplis : non renseignés dans le document fourni. Aucune valeur ajoutée.",
+    "tags": [
+      "Fiche fournie",
+      "Niveau 1"
+    ],
+    "visible": false,
+    "status": "Préparé",
+    "source": "Erine Wallace (Mecano).pdf"
+  },
+  {
+    "id": "smoky-sheet-medic",
+    "type": "person",
+    "title": "M.E.D.I.C",
+    "summary": "Protectron · Niveau 1",
+    "body": "SPECIAL : FOR 8 · PER 5 · END 7 · CHR 4 · INT 8 · AGI 4 · CHA 4.\nPV maximum : 11. Défense : 1. Initiative : 9. Bonus de dégâts au corps à corps : 1.\n\nCompétences renseignées : armes de corps à corps 3, athlétisme 3, explosifs 2, mains nues 3, médecine 3 (atout personnel), réparation 3 (atout personnel), sciences 3 (atout personnel), survie 3.\n\nRésistances indiquées : balistique 2 à la tête, aux bras, au buste et aux jambes. Les autres cases sont vides.\n\nArmes : défibrillateurs, armes de corps à corps, dégâts 4 dés de combat, énergie, portée corps à corps ; autodestruction, explosifs, dégâts 6 dés de combat, balistique, portée C, qualité Zone d’impact. Les SR sont laissés vides.\n\nÉquipement : 4 Stimpaks ; 2 RadAway ; module de diagnostic. Le module figure deux fois dans le PDF ; sa quantité reste à confirmer.\n\nTrait « Protéger ou détruire » : une fois par scène, relance d’un test pour surmonter un péril environnemental.\nGuérisseur, rang 1 : l’action mineure Porter secours soigne 1 PV supplémentaire.\n\nPV actuels, points de chance, capsules et autres champs non remplis : non renseignés dans le document fourni. Aucune valeur ajoutée.",
+    "tags": [
+      "Fiche fournie",
+      "Niveau 1"
+    ],
+    "visible": false,
+    "status": "Préparé",
+    "source": "M.E.D.I.C.pdf"
+  },
+  {
+    "id": "smoky-sheet-nathan",
+    "type": "person",
+    "title": "Nathan Caldwell",
+    "summary": "Commandant · Habitant d’abri · Niveau 1",
+    "body": "SPECIAL : FOR 5 · PER 5 · END 6 · CHR 8 · INT 5 · AGI 6 · CHA 5.\nPV maximum : 11. Défense : 1. Initiative : 11. Bonus de dégâts au corps à corps : case vide.\n\nCompétences renseignées : armes de corps à corps 2, armes légères 3 (atout personnel), athlétisme 2, discours 3 (atout personnel), projectiles 2, survie 3, troc 3 (atout personnel).\n\nRésistances indiquées : tête, balistique 2 ; bras, buste et jambes, balistique 2 / énergie 1 / radiations 2. Les autres cases sont vides.\n\nArmes : pistolet 10 mm, dégâts 4 dés de combat, balistique, cadence 2, portée C, qualités Fiable et Combat rapproché ; matraque, dégâts 3 dés de combat, balistique, portée corps à corps. Les SR sont laissés vides.\n\nÉquipement : 10 munitions de 10 mm ; gourde avec 3 doses d’eau purifiée ; 2 rations de nourriture ; 1 Stimpak ; Pip-Boy.\n\nBeau parleur, rang 1 : relance de 1d20 lors d’un test de Troc ou de Discours en opposition.\n\nPV actuels, points de chance, capsules et autres champs non remplis : non renseignés dans le document fourni. Aucune valeur ajoutée.",
+    "tags": [
+      "Fiche fournie",
+      "Niveau 1"
+    ],
+    "visible": false,
+    "status": "Préparé",
+    "source": "Nathan Caldwell (Commandant).pdf"
+  }
+]

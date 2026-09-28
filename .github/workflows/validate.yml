@@ -36,6 +36,8 @@ jobs:
         run: node scripts/comfort-smoke.cjs
       - name: Test fog on mobile Chromium and Safari engine
         run: node scripts/fog-smoke.cjs
+      - name: Test empty campaign and supplied sheets
+        run: node scripts/cleanup-smoke.cjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:

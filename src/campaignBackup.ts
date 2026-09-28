@@ -25,7 +25,7 @@ export function validateCampaign(value:unknown):State{
  const rawTokens=(v.tokens||[]) as unknown[];if(rawTokens.length>5000)fail('trop de pions.');
  const tokens:Token[]=rawTokens.map(raw=>{const t=object(raw);const size=num(t.size,.01,.3);if(typeof t.color!=='string'||!/^#[0-9a-f]{6}$/i.test(t.color))fail('couleur de pion incorrecte.');return {id:str(t.id,'identifiant de pion',200),name:str(t.name,'nom de pion',140),image:url(t.image),mapImage:url(t.mapImage),...point(t),size,color:t.color,visible:bool(t.visible)}}).filter(t=>!isPointer(t));unique(tokens);
  if(tokens.some(t=>!t.id||!t.name.trim()))fail('pion sans nom ou identifiant.');
- const result:State={name,entries,tokens,position:point(v.position),mapImage:url(v.mapImage),log:[]};
+ const result:State={cleanupVersion:1,name,entries,tokens,position:point(v.position),mapImage:url(v.mapImage),log:[]};
  if(v.log!==undefined){if(!Array.isArray(v.log)||v.log.length>1000)fail('journal incorrect.');result.log=v.log.map(raw=>{const l=object(raw);return {id:str(l.id,'identifiant',200),text:str(l.text,'journal',20000),date:str(l.date,'date',100)}})}
  if(v.mapPositions!==undefined){const positions=object(v.mapPositions);if(Object.keys(positions).length>1000)fail('trop de cartes.');result.mapPositions=Object.fromEntries(Object.entries(positions).map(([key,value])=>{if(['__proto__','constructor','prototype'].includes(key)||key.length>4000)fail('identifiant de carte incorrect.');return [key,point(value)]}))}
  if(v.scenario!==undefined){const p=object(v.scenario);result.scenario={installed:bool(p.installed),completed:strings(p.completed,1000),round:num(p.round,1,99),effort:num(p.effort,0,20),notes:str(p.notes,'notes MJ',100000)}}

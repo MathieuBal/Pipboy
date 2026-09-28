@@ -1,5 +1,6 @@
 import type {SupabaseClient} from '@supabase/supabase-js';
 import {initial,labels,type State} from './data';
+import {cleanCampaign} from './campaignCleanup';
 import {publicSupabaseConfig} from './supabase-public';
 const envUrl=import.meta.env.VITE_SUPABASE_URL,envKey=import.meta.env.VITE_SUPABASE_ANON_KEY;
 const {url,key}=envUrl&&envKey?{url:envUrl,key:envKey}:publicSupabaseConfig;
@@ -37,7 +38,10 @@ export function readDemo():State{
  });
  const coordinate=(v:unknown,f:number)=>typeof v==='number'&&Number.isFinite(v)?Math.max(0,Math.min(1,v)):f;
  const tokens=Array.isArray(value.tokens)?value.tokens.filter(t=>t&&typeof t.id==='string'&&typeof t.name==='string'&&typeof t.mapImage==='string').map(t=>({...t,image:typeof t.image==='string'?t.image:'',x:coordinate(t.x,.5),y:coordinate(t.y,.5),size:[.04,.06,.09,.12].includes(t.size)?t.size:.06,color:/^#[0-9a-f]{6}$/i.test(t.color)?t.color:'#a4ef91',visible:t.visible===true})):[];
- return {...value,tokens,name:typeof value.name==='string'?value.name:fallback.name,mapImage:typeof value.mapImage==='string'?value.mapImage:'',entries,position:{x:coordinate(value.position?.x,fallback.position.x),y:coordinate(value.position?.y,fallback.position.y)},log:Array.isArray(value.log)?value.log.filter(l=>l&&typeof l.id==='string'&&typeof l.text==='string'&&typeof l.date==='string'):[]};
+ const normalized:State={...value,tokens,name:typeof value.name==='string'?value.name:fallback.name,mapImage:typeof value.mapImage==='string'?value.mapImage:'',entries,position:{x:coordinate(value.position?.x,fallback.position.x),y:coordinate(value.position?.y,fallback.position.y)},log:Array.isArray(value.log)?value.log.filter(l=>l&&typeof l.id==='string'&&typeof l.text==='string'&&typeof l.date==='string'):[]};
+ const cleaned=cleanCampaign(normalized);
+ if(cleaned!==normalized){localStorage.setItem('pipboy-before-cleanup-v1',JSON.stringify(normalized));localStorage.setItem(STORAGE,JSON.stringify(cleaned))}
+ return cleaned;
 }
 export function writeDemo(s:State){localStorage.setItem(STORAGE,JSON.stringify(s));window.dispatchEvent(new Event('pipboy-update'))}
 export type Snapshot={state:State;role:'gm'|'player';revision:number;name:string;invite_code?:string;members:number};

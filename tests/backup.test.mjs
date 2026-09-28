@@ -2,9 +2,9 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import ts from 'typescript';
-async function load(file){const text=await readFile(new URL('../src/'+file,import.meta.url),'utf8');return import('data:text/javascript;base64,'+Buffer.from(ts.transpileModule(text,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText).toString('base64'))}
+async function load(file){const text=await readFile(new URL((file==='legacy-demo.ts'?'./':'../src/')+file,import.meta.url),'utf8');return import('data:text/javascript;base64,'+Buffer.from(ts.transpileModule(text,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText).toString('base64'))}
 const {parseBackup,makeBackup,saveRollback,rollbackKey}=await load('campaignBackup.ts');
-const {initial}=await load('data.ts');
+const {initial}=await load('legacy-demo.ts');
 test('backup round-trip preserves campaign and secrets but not credentials or transient pointers',()=>{
  const s={...initial,tokens:[{id:'real',name:'PNJ secret',mapImage:'',image:'',x:.2,y:.8,size:.06,color:'#ffffff',visible:false},{id:'pipboy-pointer-123-test',name:'Ping',mapImage:'',image:'',x:.3,y:.4,size:.04,color:'#ffffff',visible:true}],scenario:{installed:true,completed:['briefing'],round:3,effort:12,notes:'Notes privées'},access_token:'NEVER',session:'NEVER',mapPositions:{abri:{x:.1,y:.2}}};
  const backup=makeBackup(s),roundtrip=parseBackup(JSON.stringify(backup));assert.equal(roundtrip.legacy,false);assert.equal(roundtrip.state.scenario.notes,'Notes privées');assert.equal(roundtrip.state.entries.length,s.entries.length);assert.equal(roundtrip.state.entries.find(e=>e.id==='station').visible,false);assert.equal(roundtrip.state.tokens.length,1);assert.equal(roundtrip.state.tokens[0].visible,false);assert.equal(roundtrip.state.access_token,undefined);assert.equal(roundtrip.state.session,undefined);assert.ok(!JSON.stringify(backup).includes('NEVER'));assert.equal(parseBackup(JSON.stringify(initial)).legacy,true);
