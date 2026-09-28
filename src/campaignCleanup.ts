@@ -5,5 +5,5 @@ export function isLegacyExample(e:Entry){return examples[e.id]===e.title}
 export function cleanCampaign(state:State):State{
  if((state.cleanupVersion||0)>=1)return state;
  const removed=new Set(state.entries.filter(isLegacyExample).map(e=>e.id));
- return {...state,cleanupVersion:1,name:state.name==='Les échos du silence'?'Mission Smoky Waters':state.name,mapImage:'',position:{x:.5,y:.5},log:[],entries:state.entries.filter(e=>!removed.has(e.id)).map(e=>({...e,visible:false,links:e.links?.filter(id=>!removed.has(id))})),tokens:(state.tokens||[]).filter(t=>!t.id.startsWith('pipboy-pointer-')).map(t=>({...t,visible:false}))};
+ return {...state,cleanupVersion:1,name:state.name==='Les échos du silence'?'Mission Smoky Waters':state.name,mapImage:'',position:{x:.5,y:.5},log:[],entries:state.entries.filter(e=>!removed.has(e.id)).map(e=>({...e,visible:false,links:e.links?.filter(id=>!removed.has(id))})),tokens:(state.tokens||[]).filter(t=>!t.id.startsWith('pipboy-pointer-')).map(t=>t.id.startsWith('pipboy-fog-')?t:{...t,visible:false})};
 }
