@@ -32,6 +32,8 @@ jobs:
         run: node scripts/table-smoke.cjs
       - name: Test scenario preparation and touch placement
         run: node scripts/scenario-smoke.cjs
+      - name: Test fullscreen, shared pointer and campaign backups
+        run: node scripts/comfort-smoke.cjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
