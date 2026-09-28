@@ -120,7 +120,7 @@ async function main(){
  await page.getByRole('button',{name:'Console MJ',exact:true}).click();
  const priorMapState=await page.evaluate(()=>JSON.parse(localStorage.getItem('pipboy-demo-v1')));
  await page.getByRole('button',{name:'Bibliothèque de cartes',exact:true}).click();
- assert.equal(await page.locator('.map-cards article').count(),5);
+ assert.equal(await page.locator('.map-cards article').count(),6);
  for(const img of await page.locator('.map-cards img').all()){await img.scrollIntoViewIfNeeded();await img.evaluate(e=>e.decode())}
  const vaultCard=page.locator('.map-cards article').filter({hasText:'Abri 50 · Secteur de départ'});
  await vaultCard.getByRole('button',{name:'Prévisualiser',exact:true}).click();
