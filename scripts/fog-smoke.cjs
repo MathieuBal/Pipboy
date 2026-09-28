@@ -21,6 +21,7 @@ async function main(){
  await gm.getByRole('button',{name:'Remasquer des zones',exact:true}).click();await gm.getByRole('button',{name:'Masquer zone 37',exact:true}).tap();await count(player,64);
  await gm.getByRole('button',{name:'Annuler le dernier tracé',exact:true}).click();await count(player,63);
  await gm.getByRole('button',{name:'Table plein écran',exact:true}).click();assert.ok(await gm.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+ assert.ok((await gm.locator('.table-viewport').boundingBox()).height>=180,'Fog editing keeps a usable map viewport');
  await gm.screenshot({path:`test-results/fog-gm-${name}.png`,fullPage:true});await player.screenshot({path:`test-results/fog-player-${name}.png`,fullPage:true});
  await gm.getByRole('button',{name:'Tout dévoiler',exact:true}).click();await count(player,0);await gm.getByRole('button',{name:'Annuler le dernier tracé',exact:true}).click();await count(player,63);
  await gm.reload();await gm.getByRole('button',{name:'Table de jeu',exact:true}).click();await count(gm,63);
