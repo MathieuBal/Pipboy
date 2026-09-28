@@ -38,6 +38,8 @@ jobs:
         run: node scripts/fog-smoke.cjs
       - name: Test empty campaign and supplied sheets
         run: node scripts/cleanup-smoke.cjs
+      - name: Test terminal codes and archives
+        run: node scripts/terminal-smoke.cjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
